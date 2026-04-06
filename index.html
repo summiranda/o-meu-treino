@@ -61,12 +61,10 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 
 .section-div{ font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:#888; margin:1.2rem 0 .7rem; display:flex; align-items:center; gap:.6rem; font-weight:700; }
 .section-div::after{ content:’’; flex:1; height:1px; background:#333; }
-
-/* OPTIONAL SECTION */
 .section-div.optional{ color:#FFD166; }
 .section-div.optional::after{ background:#444; }
+
 .optional-note{ background:rgba(255,209,102,.07); border:1px solid rgba(255,209,102,.2); border-radius:10px; padding:.7rem 1rem; margin-bottom:.8rem; font-size:.75rem; color:#FFD166; line-height:1.6; }
-.optional-note strong{ color:#FFD166; }
 
 .ex-card{ background:#1C1C1C; border:1px solid #333; border-radius:12px; margin-bottom:.8rem; overflow:hidden; }
 .ex-card.optional-card{ border-color:rgba(255,209,102,.25); }
@@ -115,23 +113,18 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .rest-timer-skip{ font-size:.65rem; color:#888; background:#242424; border:1px solid #333; border-radius:8px; padding:.35rem .8rem; cursor:pointer; font-family:‘Inter’,sans-serif; }
 
 .notes-area{ margin-top:.8rem; }
-.notes-label{ font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:#888; margin-bottom:.4rem; font-weight:700; }
 .notes-input{ width:100%; background:#242424; border:1px solid #333; border-radius:10px; padding:.7rem .9rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.85rem; resize:none; height:65px; line-height:1.5; }
 .notes-input:focus{ outline:none; border-color:#FF6B4A; }
 .notes-input::placeholder{ color:#555; }
-
 .session-summary{ background:rgba(76,175,125,.1); border:1px solid rgba(76,175,125,.3); border-radius:10px; padding:.9rem 1rem; margin-bottom:.8rem; font-size:.82rem; line-height:1.7; color:#F2F2F2; }
 .session-summary strong{ color:#4CAF7D; }
-
 .save-btn{ width:100%; padding:1rem; background:#FF6B4A; color:#fff; border:none; border-radius:12px; font-family:‘Syne’,sans-serif; font-size:.95rem; font-weight:800; cursor:pointer; margin-top:.6rem; }
 .save-btn:active{ opacity:.85; }
 
 .screen-title{ font-family:‘Syne’,sans-serif; font-size:1.3rem; font-weight:800; color:#F2F2F2; margin-bottom:.3rem; }
 .screen-sub{ font-size:.7rem; color:#888; margin-bottom:1rem; }
-
 .ex-select{ background:#242424; border:1px solid #333; border-radius:10px; padding:.75rem 1rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.88rem; width:100%; margin-bottom:1.2rem; -webkit-appearance:none; appearance:none; cursor:pointer; }
 .ex-select:focus{ outline:none; border-color:#FF6B4A; }
-
 .mini-chart{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1rem; margin-bottom:1.2rem; }
 .chart-label{ font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:#888; margin-bottom:.8rem; font-weight:700; }
 canvas{ width:100%!important; display:block; }
@@ -149,6 +142,10 @@ canvas{ width:100%!important; display:block; }
 .history-set .reps{ color:#888; }
 .history-note{ font-size:.72rem; color:#888; font-style:italic; padding-top:.3rem; }
 .no-history{ text-align:center; color:#888; font-size:.82rem; padding:2.5rem 0; line-height:2; }
+
+/* SVG ILLUSTRATION */
+.ex-illustration{ background:#1A1A1A; border-radius:12px; padding:1rem; margin-bottom:1rem; display:flex; align-items:center; justify-content:center; }
+.ex-illustration svg{ max-width:100%; height:auto; }
 
 .body-form{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1.1rem; margin-bottom:1.2rem; }
 .body-form-title{ font-family:‘Syne’,sans-serif; font-size:1rem; font-weight:700; color:#F2F2F2; margin-bottom:.9rem; }
@@ -187,22 +184,19 @@ canvas{ width:100%!important; display:block; }
 .tip-text{ font-size:.8rem; color:#CCC; line-height:1.75; }
 .tip-text strong{ color:#F2F2F2; }
 
-.ex-modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:300; display:flex; align-items:flex-end; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
+.ex-modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:300; display:flex; align-items:flex-end; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
 .ex-modal-overlay.open{ opacity:1; pointer-events:all; }
-.ex-modal{ background:#1C1C1C; border-radius:20px 20px 0 0; width:100%; max-width:500px; padding:1.5rem 1.2rem 2.5rem; border-top:1px solid #333; transform:translateY(100%); transition:transform .35s cubic-bezier(.32,.72,0,1); position:relative; }
+.ex-modal{ background:#1C1C1C; border-radius:20px 20px 0 0; width:100%; max-width:500px; padding:1.5rem 1.2rem 2.5rem; border-top:1px solid #333; transform:translateY(100%); transition:transform .35s cubic-bezier(.32,.72,0,1); position:relative; max-height:90vh; overflow-y:auto; }
 .ex-modal-overlay.open .ex-modal{ transform:translateY(0); }
 .modal-handle{ width:40px; height:4px; background:#333; border-radius:2px; margin:0 auto 1.2rem; }
 .modal-close{ position:absolute; top:1rem; right:1rem; background:#242424; border:1px solid #333; border-radius:50%; width:2rem; height:2rem; color:#F2F2F2; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 .modal-name{ font-family:‘Syne’,sans-serif; font-size:1.2rem; font-weight:800; color:#F2F2F2; margin-bottom:.3rem; }
 .modal-muscle{ font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:#FF6B4A; margin-bottom:1rem; font-weight:700; }
-.modal-img-wrap{ width:100%; border-radius:12px; overflow:hidden; background:#242424; margin-bottom:1rem; min-height:160px; display:flex; align-items:center; justify-content:center; }
-.modal-img-wrap img{ width:100%; display:block; border-radius:12px; object-fit:cover; }
-.modal-img-fallback{ font-size:.75rem; color:#888; text-align:center; padding:1.5rem; line-height:1.6; }
 .modal-tip{ font-size:.8rem; color:#CCC; line-height:1.75; margin-bottom:1.2rem; }
 .modal-tip strong{ color:#F2F2F2; }
 .yt-btn{ display:flex; align-items:center; justify-content:center; gap:.6rem; width:100%; padding:.9rem; background:#CC0000; color:#fff; border:none; border-radius:12px; font-family:‘Syne’,sans-serif; font-size:.85rem; font-weight:700; cursor:pointer; text-decoration:none; }
 
-.edit-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:400; display:flex; align-items:flex-end; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
+.edit-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:400; display:flex; align-items:flex-end; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
 .edit-overlay.open{ opacity:1; pointer-events:all; }
 .edit-modal{ background:#1C1C1C; border-radius:20px 20px 0 0; width:100%; max-width:500px; padding:1.5rem 1.2rem 2.5rem; border-top:1px solid #333; transform:translateY(100%); transition:transform .35s cubic-bezier(.32,.72,0,1); max-height:88vh; overflow-y:auto; }
 .edit-overlay.open .edit-modal{ transform:translateY(0); }
@@ -273,7 +267,6 @@ canvas{ width:100%!important; display:block; }
 <!-- ══ TREINO ══ -->
 
 <div class="screen active" id="screen-treino">
-
   <div class="session-timer-bar">
     <div>
       <div class="timer-label">Duração da sessão</div>
@@ -297,10 +290,7 @@ canvas{ width:100%!important; display:block; }
     </div>
   </div>
 
-  <!-- AQUECIMENTO -->
-
   <div class="section-div">Aquecimento</div>
-
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('a1')">
       <div><div class="ex-num">A1 · Aquecimento</div><div class="ex-name">Mobilização articular <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Ombros · Pescoço · Pulsos · 2 min</div></div>
@@ -308,73 +298,57 @@ canvas{ width:100%!important; display:block; }
     </div>
     <div class="ex-instructions" id="instr-a1">
       <div class="instruction-step"><div class="step-num">1</div><div class="step-text"><strong>Ombros:</strong> Círculos lentos para a frente 10×, depois para trás 10×.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Pescoço:</strong> Inclina a cabeça para cada lado (orelha ao ombro), segura 5 seg. Repete 3× por lado. <strong>Não forces rotações completas.</strong></div></div>
-      <div class="instruction-step"><div class="step-num">3</div><div class="step-text"><strong>Pulsos:</strong> Roda 10× para cada lado. Abre e fecha as mãos com força 10×.</div></div>
-      <div class="instruction-step"><div class="step-num">4</div><div class="step-text"><strong>Cotovelos:</strong> Estende e dobra os braços 10× alternando. Objetivo: articulações lubrificadas, não cansadas.</div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Pescoço:</strong> Inclina a cabeça para cada lado, segura 5 seg. 3× por lado. <strong>Não forces rotações completas.</strong></div></div>
+      <div class="instruction-step"><div class="step-num">3</div><div class="step-text"><strong>Pulsos:</strong> Roda 10× para cada lado. Abre e fecha as mãos 10×.</div></div>
+      <div class="instruction-step"><div class="step-num">4</div><div class="step-text"><strong>Cotovelos:</strong> Estende e dobra os braços 10× alternando.</div></div>
     </div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('a2')">
       <div><div class="ex-num">A2 · Aquecimento</div><div class="ex-name">Rotação externa de ombro <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Manguito rotador · 1×15 rep · Muito leve</div></div>
       <div class="ex-badge badge-none">Elástico</div>
     </div>
     <div class="ex-instructions" id="instr-a2">
-      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">De pé com o cotovelo dobrado a <strong>90° junto ao corpo.</strong> Antebraço aponta para a frente.</div></div>
+      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Cotovelo dobrado a <strong>90° junto ao corpo.</strong> Antebraço para a frente.</div></div>
       <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Com elástico ou haltere leve (1–2 kg), roda o antebraço para fora sem mover o cotovelo.</div></div>
-      <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Volta devagar. 15 repetições por braço. Protege o manguito rotador para os exercícios seguintes.</div></div>
+      <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Volta devagar. 15 repetições por braço.</div></div>
     </div>
   </div>
 
-  <!-- TREINO PRINCIPAL -->
-
   <div class="section-div">Treino principal</div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b1')"><div><div class="ex-num">B1 · Principal</div><div class="ex-name">Puxada à frente <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Grande dorsal · Bíceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b1"></div></div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b2')"><div><div class="ex-num">B2 · Principal</div><div class="ex-name">Remada na máquina <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Rombóides · Trapézio · Bíceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b2"></div></div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b3')"><div><div class="ex-num">B3 · Principal</div><div class="ex-name">Press de peito <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Peitoral · Tríceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b3"></div></div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b4')"><div><div class="ex-num">B4 · Principal</div><div class="ex-name">Curl de bíceps <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Bíceps · 3×10 rep</div></div><div class="ex-badge badge-halt">Halteres</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b4"></div></div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b5')"><div><div class="ex-num">B5 · Principal</div><div class="ex-name">Extensão de tríceps <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Tríceps · 3×10 rep</div></div><div class="ex-badge badge-cabo">Cabo/Polia</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b5"></div></div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b6')"><div><div class="ex-num">B6 · Principal</div><div class="ex-name">Elevação lateral <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Deltóide médio · 3×12 rep</div></div><div class="ex-badge badge-halt">Halteres</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b6"></div></div>
   </div>
 
-  <!-- OPCIONAL -->
-
   <div class="section-div optional">Exercício opcional <span style="font-size:.55rem;font-weight:400;letter-spacing:0;text-transform:none;color:#888">· +10 min se tiveres tempo</span></div>
-
-  <div class="optional-note">⭐ <strong>Só se tiveres tempo e energia.</strong> O treino base está completo sem este exercício. Se fizeres, faz sempre no fim — nunca antes dos obrigatórios.</div>
-
+  <div class="optional-note">⭐ <strong>Só se tiveres tempo e energia.</strong> O treino está completo sem este exercício.</div>
   <div class="ex-card optional-card">
-    <div class="ex-header tappable" onclick="openExModal('b7')"><div><div class="ex-num optional-num">B7 · Opcional</div><div class="ex-name">Face pull no cabo <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Trapézio médio · Rombóides · Rotadores externos · 3×15 rep</div></div><div class="ex-badge badge-opt">Cabo</div></div>
+    <div class="ex-header tappable" onclick="openExModal('b7')"><div><div class="ex-num optional-num">B7 · Opcional</div><div class="ex-name">Face pull no cabo <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Trapézio médio · Rombóides · Rotadores · 3×15 rep</div></div><div class="ex-badge badge-opt">Cabo</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b7"></div></div>
   </div>
 
-  <!-- RETORNO -->
-
   <div class="section-div">Retorno à calma</div>
-
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('c1')"><div><div class="ex-num">C1 · Retorno</div><div class="ex-name">Alongamento cruzado do ombro <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Deltóide posterior · 30 s × lado × 2</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c1">
@@ -383,7 +357,6 @@ canvas{ width:100%!important; display:block; }
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Segura <strong>30 segundos</strong>. Muda de lado. Repete 2× por lado.</div></div>
     </div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('c2')"><div><div class="ex-num">C2 · Retorno</div><div class="ex-name">Alongamento bíceps + peitoral <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Bíceps · Peitoral · 30 s × lado × 2</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c2">
@@ -392,18 +365,17 @@ canvas{ width:100%!important; display:block; }
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Segura <strong>30 segundos</strong>. Muda de lado. Repete 2× por lado.</div></div>
     </div>
   </div>
-
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('c3')"><div><div class="ex-num">C3 · Retorno</div><div class="ex-name">Respiração diafragmática <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Sistema nervoso · Recuperação · 1–2 min</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c3">
       <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Senta-te ou deita-te. Uma mão no peito, outra no abdómen.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Inspira</strong> pelo nariz 4 segundos — o abdómen sobe, não o peito.</div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Inspira</strong> pelo nariz 4 seg — o abdómen sobe, não o peito.</div></div>
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text"><strong>Segura</strong> 2 seg. <strong>Expira</strong> pela boca 6 seg. Repete 6–8 vezes.</div></div>
     </div>
   </div>
 
-  <div class="section-div">Notas</div>
-  <div class="notes-area">
+  <div style="margin-top:.8rem">
+    <div style="font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:.4rem;font-weight:700">Notas</div>
     <textarea class="notes-input" id="session-notes" placeholder="Como correu hoje? Algo a registar…"></textarea>
   </div>
   <div id="session-summary" style="display:none;margin-top:.8rem" class="session-summary"></div>
@@ -476,13 +448,13 @@ canvas{ width:100%!important; display:block; }
 
 <div class="screen" id="screen-dicas">
   <div class="tip-card"><div class="tip-ex-name">Puxada à frente</div><div class="tip-muscle">Grande dorsal · Bíceps · Rombóides</div><div class="tip-text">Coxas fixas. Barra mais larga que os ombros. <strong>Puxa até ao queixo</strong> com o peito aberto. Desce 2 seg. <strong>Evita:</strong> balançar o tronco.</div></div>
-  <div class="tip-card"><div class="tip-ex-name">Remada na máquina</div><div class="tip-muscle">Rombóides · Trapézio médio · Grande dorsal · Bíceps</div><div class="tip-text">Peito apoiado no suporte, costas direitas. <strong>Puxa os punhos em direção ao abdómen</strong> — não ao peito. Sente as omoplatas a juntar-se no fim. Volta devagar controlado. <strong>Essencial</strong> para contrariar a postura sentada.</div></div>
+  <div class="tip-card"><div class="tip-ex-name">Remada na máquina</div><div class="tip-muscle">Rombóides · Trapézio médio · Grande dorsal · Bíceps</div><div class="tip-text">Peito apoiado no suporte. <strong>Puxa os punhos em direção ao abdómen.</strong> Sente as omoplatas a juntar-se no fim. Volta devagar. <strong>Essencial</strong> para contrariar a postura sentada.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Press de peito na máquina</div><div class="tip-muscle">Peitoral maior · Tríceps · Deltóide anterior</div><div class="tip-text">Punhos ao nível dos ombros. <strong>Não travas os cotovelos.</strong> Volta devagar.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Curl de bíceps alternado</div><div class="tip-muscle">Bíceps braquial · Braquiorradial</div><div class="tip-text"><strong>Cotovelos colados ao tronco.</strong> Roda o pulso para fora no topo. Sem balanço do corpo.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Extensão de tríceps (Pushdown)</div><div class="tip-muscle">Tríceps braquial — 3 cabeças</div><div class="tip-text"><strong>Cotovelos fixos junto ao tronco.</strong> Empurra até estender. Volta lentamente.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Elevação lateral</div><div class="tip-muscle">Deltóide médio · Trapézio</div><div class="tip-text">Começa com <strong>2–4 kg.</strong> Para na altura dos ombros — <strong>não subas acima dos 90°.</strong></div></div>
-  <div class="tip-card tip-optional"><div class="tip-ex-name" style="color:#FFD166">⭐ Face pull no cabo</div><div class="tip-muscle" style="color:#FFD166">Trapézio médio · Rombóides · Rotadores externos</div><div class="tip-text">Polia ao nível dos olhos ou acima. Usa corda. <strong>Puxa em direção à testa</strong>, separando as mãos no fim do movimento — cotovelos para os lados e acima dos ombros. É o exercício mais eficaz para corrigir a postura e proteger os ombros a longo prazo.</div></div>
-  <div class="tip-card" style="border-left-color:#4CAF7D"><div class="tip-ex-name" style="color:#4CAF7D">🥩 Proteína diária</div><div class="tip-muscle" style="color:#4CAF7D">Meta: 105g/dia</div><div class="tip-text"><strong>Fontes fáceis:</strong> ovo, frango, atum, iogurte grego, queijo cottage. Um shake de whey após o treino é clinicamente válido.</div></div>
+  <div class="tip-card tip-optional"><div class="tip-ex-name" style="color:#FFD166">⭐ Face pull no cabo</div><div class="tip-muscle" style="color:#FFD166">Trapézio médio · Rombóides · Rotadores externos</div><div class="tip-text">Polia ao nível dos olhos. Usa corda. <strong>Puxa em direção à testa</strong>, separando as mãos — cotovelos para os lados e acima dos ombros. O melhor exercício para postura e saúde dos ombros a longo prazo.</div></div>
+  <div class="tip-card" style="border-left-color:#4CAF7D"><div class="tip-ex-name" style="color:#4CAF7D">🥩 Proteína diária</div><div class="tip-muscle" style="color:#4CAF7D">Meta: 105g/dia</div><div class="tip-text"><strong>Fontes fáceis:</strong> ovo, frango, atum, iogurte grego, queijo cottage.</div></div>
 </div>
 
 </div>
@@ -500,10 +472,10 @@ canvas{ width:100%!important; display:block; }
   <div class="ex-modal">
     <button class="modal-close" onclick="closeExModalDirect()">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-name" id="modal-name"></div>
+    <div class="modal-name"   id="modal-name"></div>
     <div class="modal-muscle" id="modal-muscle"></div>
-    <div class="modal-img-wrap" id="modal-img-wrap"></div>
-    <div class="modal-tip" id="modal-tip"></div>
+    <div class="ex-illustration" id="modal-illustration"></div>
+    <div class="modal-tip"    id="modal-tip"></div>
     <a class="yt-btn" id="modal-yt" href="#" target="_blank" rel="noopener">▶ Ver vídeo no YouTube</a>
   </div>
 </div>
@@ -540,37 +512,246 @@ canvas{ width:100%!important; display:block; }
 <div class="toast" id="toast"></div>
 
 <script>
-// ══════════════════════
+// ══════════════════════════════
+// SVG ILLUSTRATIONS
+// Each SVG is a simple anatomical diagram showing the exercise movement
+// Colors: body=#4A4A5A, highlight=#FF6B4A, machine=#2A3A5A, cable=#FFD166
+// ══════════════════════════════
+const SVG_ILLUSTRATIONS = {
+  b1: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Machine frame -->
+    <rect x="20" y="10" width="260" height="8" rx="4" fill="#2A3A5A"/>
+    <rect x="130" y="18" width="8" height="60" fill="#2A3A5A"/>
+    <!-- Cable -->
+    <line x1="134" y1="18" x2="100" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <line x1="166" y1="18" x2="200" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <!-- Bar -->
+    <rect x="80" y="88" width="140" height="8" rx="4" fill="#888"/>
+    <!-- Seated figure -->
+    <!-- Torso -->
+    <rect x="126" y="105" width="18" height="45" rx="6" fill="#4A4A5A"/>
+    <!-- Head -->
+    <circle cx="135" cy="95" r="12" fill="#4A4A5A"/>
+    <!-- Arms reaching up -->
+    <line x1="126" y1="115" x2="97" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
+    <line x1="144" y1="115" x2="200" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
+    <!-- Seat -->
+    <rect x="105" y="148" width="60" height="10" rx="4" fill="#2A3A5A"/>
+    <!-- Legs -->
+    <rect x="112" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/>
+    <rect x="146" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/>
+    <!-- Thigh pads -->
+    <rect x="95" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/>
+    <rect x="140" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/>
+    <!-- Arrow showing pull direction -->
+    <path d="M135 75 L135 105" stroke="#4CAF7D" stroke-width="2" stroke-dasharray="3,2"/>
+    <polygon points="135,108 130,97 140,97" fill="#4CAF7D"/>
+    <!-- Label -->
+    <text x="150" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa até ao queixo ↓</text>
+  </svg>`,
+
+  b2: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Machine frame -->
+    <rect x="20" y="60" width="12" height="120" rx="4" fill="#2A3A5A"/>
+    <rect x="20" y="100" width="60" height="8" rx="4" fill="#2A3A5A"/>
+    <!-- Handles -->
+    <circle cx="80" cy="104" r="6" fill="#888"/>
+    <!-- Cable -->
+    <line x1="80" y1="104" x2="130" y2="110" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <!-- Figure seated facing machine -->
+    <!-- Torso leaning forward -->
+    <rect x="130" y="95" width="16" height="40" rx="6" fill="#4A4A5A" transform="rotate(-15,138,115)"/>
+    <!-- Head -->
+    <circle cx="125" cy="87" r="12" fill="#4A4A5A"/>
+    <!-- Chest pad -->
+    <rect x="140" y="92" width="14" height="30" rx="4" fill="#1A2A4A"/>
+    <!-- Arms pulling back - highlight -->
+    <line x1="130" y1="108" x2="80" y2="104" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
+    <!-- Shoulder blades area highlighted -->
+    <ellipse cx="148" cy="105" rx="14" ry="10" fill="rgba(255,107,74,0.25)" stroke="#FF6B4A" stroke-width="1.5"/>
+    <!-- Seat -->
+    <rect x="130" y="135" width="70" height="10" rx="4" fill="#2A3A5A"/>
+    <!-- Legs -->
+    <rect x="138" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/>
+    <rect x="170" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/>
+    <!-- Arrow showing pull direction -->
+    <path d="M105 104 L125 108" stroke="#4CAF7D" stroke-width="2"/>
+    <polygon points="128,108 118,102 118,114" fill="#4CAF7D"/>
+    <!-- Label -->
+    <text x="155" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Omoplatas juntas →</text>
+  </svg>`,
+
+  b3: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Figure standing -->
+    <!-- Head -->
+    <circle cx="150" cy="35" r="18" fill="#4A4A5A"/>
+    <!-- Torso -->
+    <rect x="130" y="52" width="40" height="70" rx="8" fill="#4A4A5A"/>
+    <!-- Left arm down (normal) -->
+    <line x1="130" y1="65" x2="100" y2="110" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="98" cy="115" r="8" fill="#888"/>
+    <!-- Right arm bent up (curl) - highlighted -->
+    <line x1="170" y1="65" x2="195" y2="90" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
+    <line x1="195" y1="90" x2="175" y2="60" stroke="#FF6B4A" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="172" cy="57" r="9" fill="#FFD166"/>
+    <!-- Elbow stays fixed indicator -->
+    <circle cx="195" cy="90" r="6" fill="none" stroke="#4CAF7D" stroke-width="2"/>
+    <text x="202" y="93" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">fixo</text>
+    <!-- Legs -->
+    <rect x="134" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/>
+    <rect x="154" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/>
+    <!-- Arrow showing curl direction -->
+    <path d="M185 85 Q170 50 165 62" stroke="#4CAF7D" stroke-width="2" fill="none" stroke-dasharray="3,2"/>
+    <polygon points="163,65 158,54 168,56" fill="#4CAF7D"/>
+    <!-- Label -->
+    <text x="35" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelo fixo — roda o pulso no topo</text>
+  </svg>`,
+
+  b4: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Cable machine top -->
+    <rect x="220" y="10" width="60" height="8" rx="4" fill="#2A3A5A"/>
+    <rect x="268" y="18" width="8" height="130" rx="3" fill="#2A3A5A"/>
+    <!-- Cable -->
+    <line x1="272" y1="18" x2="195" y2="80" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <!-- Handle -->
+    <rect x="185" y="75" width="20" height="8" rx="4" fill="#888"/>
+    <!-- Standing figure -->
+    <circle cx="140" cy="45" r="18" fill="#4A4A5A"/>
+    <!-- Torso -->
+    <rect x="122" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
+    <!-- Arms - elbows at sides, hands push down -->
+    <!-- Upper arms (fixed at sides) -->
+    <line x1="122" y1="72" x2="105" y2="95" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
+    <line x1="158" y1="72" x2="175" y2="80" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
+    <!-- Forearms pushing down - highlighted -->
+    <line x1="105" y1="95" x2="100" y2="135" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <line x1="175" y1="80" x2="192" y2="118" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <!-- Hands/handle -->
+    <rect x="88" y="132" width="24" height="7" rx="3" fill="#888"/>
+    <line x1="192" y1="118" x2="196" y2="80" stroke="#FFD166" stroke-width="2"/>
+    <!-- Elbow fixed indicators -->
+    <circle cx="105" cy="95" r="5" fill="none" stroke="#4CAF7D" stroke-width="2"/>
+    <!-- Legs -->
+    <rect x="126" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/>
+    <rect x="145" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/>
+    <!-- Arrow -->
+    <path d="M100 110 L100 132" stroke="#4CAF7D" stroke-width="2"/>
+    <polygon points="100,135 95,124 105,124" fill="#4CAF7D"/>
+    <text x="20" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelos fixos — empurra até estender</text>
+  </svg>`,
+
+  b5: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Standing figure -->
+    <circle cx="150" cy="40" r="18" fill="#4A4A5A"/>
+    <!-- Torso -->
+    <rect x="132" y="57" width="36" height="65" rx="8" fill="#4A4A5A"/>
+    <!-- Left arm raised to shoulder height - highlighted -->
+    <line x1="132" y1="70" x2="72" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="68" cy="75" r="9" fill="#FFD166"/>
+    <!-- Right arm raised to shoulder height - highlighted -->
+    <line x1="168" y1="70" x2="228" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="232" cy="75" r="9" fill="#FFD166"/>
+    <!-- 90 degree indicator -->
+    <line x1="132" y1="70" x2="132" y2="95" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="55" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text>
+    <text x="218" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text>
+    <!-- Legs -->
+    <rect x="136" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/>
+    <rect x="154" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/>
+    <!-- X mark above 90 to show not going higher -->
+    <line x1="72" y1="45" x2="82" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
+    <line x1="82" y1="45" x2="72" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
+    <line x1="228" y1="45" x2="238" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
+    <line x1="238" y1="45" x2="228" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
+    <!-- Arrows showing lift -->
+    <path d="M68 60 L68 73" stroke="#4CAF7D" stroke-width="2"/>
+    <polygon points="68,76 63,65 73,65" fill="#4CAF7D"/>
+    <text x="60" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Para na altura dos ombros — não acima</text>
+  </svg>`,
+
+  b6: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Cable machine on left -->
+    <rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
+    <rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
+    <!-- Cable to face level -->
+    <line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <!-- Cable machine on right -->
+    <rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
+    <rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
+    <!-- Cable to face level -->
+    <line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <!-- Standing figure front view -->
+    <circle cx="150" cy="45" r="18" fill="#4A4A5A"/>
+    <!-- Torso -->
+    <rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
+    <!-- Arms pulling toward face, elbows high and wide - highlighted -->
+    <line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <!-- Forearms angled up - elbows above -->
+    <line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <!-- Rope handle at face -->
+    <circle cx="125" cy="51" r="5" fill="#888"/>
+    <circle cx="175" cy="51" r="5" fill="#888"/>
+    <!-- Elbow high indicator -->
+    <text x="75" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">cotovelo↑</text>
+    <text x="190" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">↑cotovelo</text>
+    <!-- Legs -->
+    <rect x="136" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/>
+    <rect x="154" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/>
+    <text x="55" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa à testa — cotovelos acima dos ombros</text>
+  </svg>`,
+
+  b7: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Same as face pull - it IS the face pull -->
+    <!-- Cable machine on left -->
+    <rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
+    <rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
+    <line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
+    <rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
+    <line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
+    <circle cx="150" cy="45" r="18" fill="#4A4A5A"/>
+    <rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
+    <line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
+    <line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="125" cy="51" r="5" fill="#FFD166"/>
+    <circle cx="175" cy="51" r="5" fill="#FFD166"/>
+    <!-- Optional badge -->
+    <rect x="110" y="155" width="80" height="22" rx="8" fill="rgba(255,209,102,0.15)" stroke="rgba(255,209,102,0.4)" stroke-width="1"/>
+    <text x="150" y="170" font-family="Inter,sans-serif" font-size="10" fill="#FFD166" text-anchor="middle">⭐ Opcional</text>
+    <rect x="136" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/>
+    <rect x="154" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/>
+    <text x="55" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Face pull — postura e saúde dos ombros</text>
+  </svg>`
+};
+
+// ══════════════════════════════
 // EXERCISE DATA
-// ══════════════════════
+// ══════════════════════════════
 const EX_DATA = {
   b1:{ name:'Puxada à frente', muscle:'Grande dorsal · Bíceps · Rombóides',
     tip:'<strong>Coxas fixas</strong> sob o apoio. Agarra a barra um pouco mais larga que os ombros. Puxa até ao queixo com o peito aberto — sente as costas a trabalhar. Desce 2 segundos. <strong>Evita:</strong> balançar o tronco.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/11/lat-pulldown-variations.gif','https://hips.hearstapps.com/hmg-prod/images/lat-pulldown-1584721013.gif'],
     yt:'https://www.youtube.com/results?search_query=lat+pulldown+como+fazer+tutorial' },
   b2:{ name:'Remada na máquina', muscle:'Rombóides · Trapézio médio · Grande dorsal · Bíceps',
-    tip:'Peito apoiado no suporte, costas direitas. <strong>Puxa os punhos em direção ao abdómen</strong> — não ao peito. Sente as omoplatas a juntar-se no final. Volta devagar em 2 segundos. <strong>Essencial</strong> para quem trabalha sentada — corrige diretamente a postura.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/11/machine-row.gif','https://hips.hearstapps.com/hmg-prod/images/seated-cable-row-1584720963.gif'],
+    tip:'Peito apoiado no suporte, costas direitas. <strong>Puxa os punhos em direção ao abdómen</strong> — não ao peito. Sente as omoplatas a juntar-se no final. Volta devagar em 2 segundos. <strong>Essencial</strong> para quem trabalha sentada.',
     yt:'https://www.youtube.com/results?search_query=remada+maquina+como+fazer+tutorial' },
   b3:{ name:'Press de peito na máquina', muscle:'Peitoral maior · Tríceps · Deltóide anterior',
     tip:'Ajusta o banco para os <strong>punhos ficarem ao nível dos ombros.</strong> Empurra à frente de forma controlada. Não travas os cotovelos no final. Volta devagar.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/11/machine-chest-press.gif','https://hips.hearstapps.com/hmg-prod/images/chest-press-machine-1584720913.gif'],
     yt:'https://www.youtube.com/results?search_query=chest+press+maquina+como+fazer' },
   b4:{ name:'Curl de bíceps alternado', muscle:'Bíceps braquial · Braquiorradial',
     tip:'<strong>Cotovelos colados ao tronco</strong> — não se movem. Eleva um haltere de cada vez, rodando o pulso para fora no topo. <strong>Evita:</strong> usar o balanço do corpo.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/09/dumbbell-alternate-bicep-curl.gif','https://hips.hearstapps.com/hmg-prod/images/alternating-dumbbell-curl-1584720613.gif'],
     yt:'https://www.youtube.com/results?search_query=curl+biceps+alternado+haltere+como+fazer' },
   b5:{ name:'Extensão de tríceps (Pushdown)', muscle:'Tríceps braquial — 3 cabeças',
     tip:'De frente para a polia alta. <strong>Cotovelos fixos junto ao tronco.</strong> Empurra o cabo para baixo até os braços ficarem estendidos. Volta lentamente. Barra reta ou corda.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/09/cable-tricep-pushdown.gif','https://hips.hearstapps.com/hmg-prod/images/tricep-pushdown-1584721113.gif'],
     yt:'https://www.youtube.com/results?search_query=triceps+pushdown+cabo+como+fazer' },
   b6:{ name:'Elevação lateral', muscle:'Deltóide médio · Trapézio superior',
     tip:'Começa com <strong>halteres muito leves (2–4 kg).</strong> Cotovelo ligeiramente dobrado. Eleva lateralmente até à altura dos ombros. <strong>Não subas acima dos 90°.</strong>',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/09/dumbbell-lateral-raise.gif','https://hips.hearstapps.com/hmg-prod/images/lateral-raise-1584720813.gif'],
     yt:'https://www.youtube.com/results?search_query=elevacao+lateral+ombros+como+fazer' },
   b7:{ name:'Face pull no cabo', muscle:'Trapézio médio · Rombóides · Rotadores externos do ombro',
-    tip:'Polia ao nível dos olhos ou acima. Usa a corda. <strong>Puxa em direção à testa</strong>, separando as mãos no final — cotovelos para os lados e acima dos ombros. Mantém o tronco estável. É o exercício mais eficaz para corrigir postura e proteger os ombros a longo prazo.',
-    imgs:['https://www.inspireusafoundation.org/wp-content/uploads/2022/09/cable-face-pull.gif','https://hips.hearstapps.com/hmg-prod/images/face-pull-1584720713.gif'],
+    tip:'Polia ao nível dos olhos ou acima. Usa a corda. <strong>Puxa em direção à testa</strong>, separando as mãos no final — cotovelos para os lados e acima dos ombros. Mantém o tronco estável.',
     yt:'https://www.youtube.com/results?search_query=face+pull+cabo+como+fazer+tutorial' }
 };
 
@@ -580,126 +761,104 @@ const BODY_FIELDS = ['peso','cintura','abdominal','anca','peito','braco-d','brac
 const BODY_LABELS = {peso:'kg',cintura:'cin',abdominal:'abd',anca:'anca',peito:'peito','braco-d':'B.dir','braco-e':'B.esq','coxa-d':'C.dir','coxa-e':'C.esq'};
 const BODY_CHART_LABELS = {peso:'peso (kg)',cintura:'cintura (cm)',abdominal:'abdominal (cm)',anca:'anca (cm)',peito:'peito (cm)','braco-d':'braço direito (cm)','braco-e':'braço esquerdo (cm)','coxa-d':'coxa direita (cm)','coxa-e':'coxa esquerda (cm)'};
 
-// ══════════════════════
+// ══════════════════════════════
 // LOCALSTORAGE
-// ══════════════════════
+// ══════════════════════════════
 const LS = { sessions:'treino_sessions_v7', body:'treino_body_v7' };
 let db = { sessions:[], body:[] };
 
 function loadDB() {
   try {
-    const s = localStorage.getItem(LS.sessions);
-    const b = localStorage.getItem(LS.body);
-    if (s) db.sessions = JSON.parse(s);
-    if (b) db.body     = JSON.parse(b);
-  } catch(e) {}
+    const s=localStorage.getItem(LS.sessions), b=localStorage.getItem(LS.body);
+    if (s) db.sessions=JSON.parse(s);
+    if (b) db.body=JSON.parse(b);
+  } catch(e){}
 }
 function saveDB(key) {
   try {
-    if (key==='sessions') localStorage.setItem(LS.sessions, JSON.stringify(db.sessions));
-    if (key==='body')     localStorage.setItem(LS.body,     JSON.stringify(db.body));
-  } catch(e) {}
+    if (key==='sessions') localStorage.setItem(LS.sessions,JSON.stringify(db.sessions));
+    if (key==='body')     localStorage.setItem(LS.body,JSON.stringify(db.body));
+  } catch(e){}
 }
 
-// ══════════════════════
+// ══════════════════════════════
 // STATE
-// ══════════════════════
-let currentBodyMetric = 'peso';
-let restIntervalId    = null;
-let sessionIntervalId = null;
-let sessionSecs       = 0;
-let sessionRunning    = false;
-let pendingDeleteDate = null;
-let editingDate       = null;
-let restSecs          = 60;
+// ══════════════════════════════
+let currentBodyMetric='peso', restIntervalId=null, sessionIntervalId=null;
+let sessionSecs=0, sessionRunning=false, pendingDeleteDate=null, editingDate=null, restSecs=60;
 
-const todayKey = () => new Date().toISOString().slice(0,10);
-const todayStr = () => new Date().toLocaleDateString('pt-PT',{weekday:'long',day:'numeric',month:'long'});
-const fmtDate  = iso  => new Date(iso+'T12:00:00').toLocaleDateString('pt-PT',{weekday:'short',day:'numeric',month:'short',year:'2-digit'});
-const padZ     = n    => String(n).padStart(2,'0');
+const todayKey=()=>new Date().toISOString().slice(0,10);
+const todayStr=()=>new Date().toLocaleDateString('pt-PT',{weekday:'long',day:'numeric',month:'long'});
+const fmtDate=iso=>new Date(iso+'T12:00:00').toLocaleDateString('pt-PT',{weekday:'short',day:'numeric',month:'short',year:'2-digit'});
+const padZ=n=>String(n).padStart(2,'0');
 
 function init() {
   loadDB();
-  document.getElementById('today-date').textContent = todayStr();
-  document.getElementById('b-data').value = todayKey();
-  EX_IDS.forEach(ex => buildSets(ex));
+  document.getElementById('today-date').textContent=todayStr();
+  document.getElementById('b-data').value=todayKey();
+  EX_IDS.forEach(ex=>buildSets(ex));
   updateSessionCount();
-  document.getElementById('loading-overlay').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  renderBodyHistory();
-  drawBodyChart();
+  document.getElementById('loading-overlay').style.display='none';
+  document.getElementById('app').style.display='block';
+  renderBodyHistory(); drawBodyChart();
 }
 init();
 
-// ══════════════════════
-// TABS
-// ══════════════════════
-function showTab(name, el) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+function showTab(name,el) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('screen-'+name).classList.add('active');
   el.classList.add('active');
-  if (name==='progresso') setTimeout(renderProgress, 50);
-  if (name==='corpo')     setTimeout(()=>{ renderBodyHistory(); drawBodyChart(); }, 50);
+  if (name==='progresso') setTimeout(renderProgress,50);
+  if (name==='corpo')     setTimeout(()=>{renderBodyHistory();drawBodyChart();},50);
 }
 function selectWorkout(el) {
-  document.querySelectorAll('.workout-pill').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.workout-pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
 }
 
-// ══════════════════════
-// SESSION TIMER
-// ══════════════════════
 function startSessionTimer() {
   if (sessionRunning) return;
-  sessionRunning = true;
-  document.getElementById('btn-start').style.display = 'none';
-  document.getElementById('btn-stop').style.display  = 'inline-flex';
-  document.getElementById('btn-reset').style.display = 'inline-flex';
-  sessionIntervalId = setInterval(() => {
+  sessionRunning=true;
+  document.getElementById('btn-start').style.display='none';
+  document.getElementById('btn-stop').style.display='inline-flex';
+  document.getElementById('btn-reset').style.display='inline-flex';
+  sessionIntervalId=setInterval(()=>{
     sessionSecs++;
-    const h=Math.floor(sessionSecs/3600), m=Math.floor((sessionSecs%3600)/60), s=sessionSecs%60;
-    document.getElementById('timer-display').textContent = h>0 ? `${padZ(h)}:${padZ(m)}:${padZ(s)}` : `${padZ(m)}:${padZ(s)}`;
+    const h=Math.floor(sessionSecs/3600),m=Math.floor((sessionSecs%3600)/60),s=sessionSecs%60;
+    document.getElementById('timer-display').textContent=h>0?`${padZ(h)}:${padZ(m)}:${padZ(s)}`:`${padZ(m)}:${padZ(s)}`;
   },1000);
 }
 function stopSessionTimer() {
   if (!sessionRunning) return;
-  sessionRunning = false;
-  clearInterval(sessionIntervalId);
-  document.getElementById('btn-stop').style.display  = 'none';
-  document.getElementById('btn-start').style.display = 'inline-flex';
+  sessionRunning=false; clearInterval(sessionIntervalId);
+  document.getElementById('btn-stop').style.display='none';
+  document.getElementById('btn-start').style.display='inline-flex';
 }
 function resetSessionTimer() {
-  stopSessionTimer();
-  sessionSecs = 0;
-  document.getElementById('timer-display').textContent = '00:00';
-  document.getElementById('btn-reset').style.display = 'none';
+  stopSessionTimer(); sessionSecs=0;
+  document.getElementById('timer-display').textContent='00:00';
+  document.getElementById('btn-reset').style.display='none';
 }
 
-// ══════════════════════
-// INSTRUCTIONS
-// ══════════════════════
 function toggleInstr(id) {
-  const el   = document.getElementById('instr-'+id);
-  const hint = el.previousElementSibling?.querySelector('.ex-expand-hint');
+  const el=document.getElementById('instr-'+id);
+  const hint=el.previousElementSibling?.querySelector('.ex-expand-hint');
   if (!el) return;
   el.classList.toggle('open');
-  if (hint) hint.textContent = el.classList.contains('open') ? '▲ fechar' : '▼ instruções';
+  if (hint) hint.textContent=el.classList.contains('open')?'▲ fechar':'▼ instruções';
 }
 
-// ══════════════════════
-// BUILD SETS
-// ══════════════════════
 function buildSets(ex) {
-  const container = document.getElementById('sets-'+ex);
+  const container=document.getElementById('sets-'+ex);
   if (!container) return;
-  const last     = [...db.sessions].reverse().find(s => s.exercises && s.exercises[ex]);
-  const lastSets = last ? (last.exercises[ex] || []) : [];
-  const defaultReps = ex==='b6'||ex==='b7' ? (ex==='b7'?15:12) : 10;
-  let html = '';
-  for (let i=1; i<=3; i++) {
-    const ls=lastSets[i-1]||{}, preKg=ls.kg||'', preReps=ls.reps||'';
-    html += `<div class="set-row">
+  const last=[...db.sessions].reverse().find(s=>s.exercises&&s.exercises[ex]);
+  const lastSets=last?(last.exercises[ex]||[]):[];
+  const defaultReps=ex==='b6'?12:ex==='b7'?15:10;
+  let html='';
+  for (let i=1;i<=3;i++) {
+    const ls=lastSets[i-1]||{},preKg=ls.kg||'',preReps=ls.reps||'';
+    html+=`<div class="set-row">
       <div class="set-num">S${i}</div>
       <div class="input-col"><div class="set-input-label">kg</div>
         <input class="set-input${preKg?' prefilled':''}" type="number" inputmode="decimal" step="0.5"
@@ -713,152 +872,112 @@ function buildSets(ex) {
       <button class="set-done" onclick="completedSet(this)">✓</button>
     </div>`;
   }
-  container.innerHTML = html;
-  for (let i=1; i<=3; i++) updateArrow(ex, i);
+  container.innerHTML=html;
+  for (let i=1;i<=3;i++) updateArrow(ex,i);
 }
 
-function updateArrow(ex, i) {
-  const kgEl = document.getElementById(`${ex}-s${i}-kg`);
-  const arEl = document.getElementById(`${ex}-s${i}-arrow`);
+function updateArrow(ex,i) {
+  const kgEl=document.getElementById(`${ex}-s${i}-kg`);
+  const arEl=document.getElementById(`${ex}-s${i}-arrow`);
   if (!kgEl||!arEl) return;
-  const cur = parseFloat(kgEl.value);
-  if (!cur) { arEl.textContent=''; return; }
-  const last = [...db.sessions].reverse().find(s => s.exercises && s.exercises[ex]);
-  const lk   = last && last.exercises[ex][i-1] ? last.exercises[ex][i-1].kg : null;
-  if (!lk)        { arEl.textContent='🆕'; arEl.style.cssText='font-size:.6rem'; }
-  else if(cur>lk) { arEl.textContent='↑';  arEl.style.cssText='color:#4CAF7D;font-size:1rem'; }
-  else if(cur<lk) { arEl.textContent='↓';  arEl.style.cssText='color:#FF4D4D;font-size:1rem'; }
-  else            { arEl.textContent='=';  arEl.style.cssText='color:#888;font-size:.9rem'; }
+  const cur=parseFloat(kgEl.value);
+  if (!cur){arEl.textContent='';return;}
+  const last=[...db.sessions].reverse().find(s=>s.exercises&&s.exercises[ex]);
+  const lk=last&&last.exercises[ex][i-1]?last.exercises[ex][i-1].kg:null;
+  if (!lk)       {arEl.textContent='🆕';arEl.style.cssText='font-size:.6rem';}
+  else if(cur>lk){arEl.textContent='↑';arEl.style.cssText='color:#4CAF7D;font-size:1rem';}
+  else if(cur<lk){arEl.textContent='↓';arEl.style.cssText='color:#FF4D4D;font-size:1rem';}
+  else           {arEl.textContent='=';arEl.style.cssText='color:#888;font-size:.9rem';}
 }
 
-// ══════════════════════
-// REST TIMER
-// ══════════════════════
 function completedSet(btn) {
   btn.classList.toggle('completed');
   if (btn.classList.contains('completed')) startRestTimer(60);
 }
 function startRestTimer(secs) {
-  stopRestTimer();
-  restSecs = secs;
-  document.getElementById('rest-count').textContent = restSecs;
+  stopRestTimer(); restSecs=secs;
+  document.getElementById('rest-count').textContent=restSecs;
   document.getElementById('rest-timer').classList.add('visible');
-  restIntervalId = setInterval(() => {
+  restIntervalId=setInterval(()=>{
     restSecs--;
-    document.getElementById('rest-count').textContent = restSecs;
-    if (restSecs<=0) {
-      stopRestTimer();
-      if (navigator.vibrate) navigator.vibrate([200,100,200]);
-      showToast('⏱ Descanso terminado!','info');
-    }
+    document.getElementById('rest-count').textContent=restSecs;
+    if(restSecs<=0){stopRestTimer();if(navigator.vibrate)navigator.vibrate([200,100,200]);showToast('⏱ Descanso terminado!','info');}
   },1000);
 }
-function stopRestTimer() {
-  clearInterval(restIntervalId);
-  document.getElementById('rest-timer').classList.remove('visible');
-}
+function stopRestTimer(){clearInterval(restIntervalId);document.getElementById('rest-timer').classList.remove('visible');}
 
-// ══════════════════════
-// SAVE SESSION
-// ══════════════════════
 function saveSession() {
-  const date    = todayKey();
-  const session = { date, exercises:{}, notes:document.getElementById('session-notes').value.trim(), duration:sessionSecs };
-  let total=0, done=0;
-  EX_IDS.forEach(ex => {
-    const sets = [];
-    for (let s=1; s<=3; s++) {
-      const kgEl = document.getElementById(`${ex}-s${s}-kg`);
-      const rpEl = document.getElementById(`${ex}-s${s}-reps`);
-      const dBtn = kgEl?.closest('.set-row')?.querySelector('.set-done');
+  const date=todayKey();
+  const session={date,exercises:{},notes:document.getElementById('session-notes').value.trim(),duration:sessionSecs};
+  let total=0,done=0;
+  EX_IDS.forEach(ex=>{
+    const sets=[];
+    for(let s=1;s<=3;s++){
+      const kgEl=document.getElementById(`${ex}-s${s}-kg`);
+      const rpEl=document.getElementById(`${ex}-s${s}-reps`);
+      const dBtn=kgEl?.closest('.set-row')?.querySelector('.set-done');
       total++;
-      if (kgEl&&rpEl) {
-        const kg=parseFloat(kgEl.value)||null, reps=parseInt(rpEl.value)||null;
+      if(kgEl&&rpEl){
+        const kg=parseFloat(kgEl.value)||null,reps=parseInt(rpEl.value)||null;
         const isDone=dBtn?.classList.contains('completed')||false;
-        if (isDone) done++;
-        if (kg||reps) sets.push({kg,reps,done:isDone});
+        if(isDone)done++;
+        if(kg||reps)sets.push({kg,reps,done:isDone});
       }
     }
-    if (sets.length) session.exercises[ex] = sets;
+    if(sets.length)session.exercises[ex]=sets;
   });
-  db.sessions = db.sessions.filter(s => s.date!==date);
+  db.sessions=db.sessions.filter(s=>s.date!==date);
   db.sessions.push(session);
-  db.sessions.sort((a,b) => a.date.localeCompare(b.date));
-  saveDB('sessions');
-  updateSessionCount();
-  const pct = Math.round((done/total)*100);
-  const el  = document.getElementById('session-summary');
-  el.style.display = 'block';
-  const dur = sessionSecs>0 ? ` · ${padZ(Math.floor(sessionSecs/60))}:${padZ(sessionSecs%60)}` : '';
-  el.innerHTML = `<strong>${done} de ${total} séries</strong> concluídas (${pct}%)${dur}. ${pct===100?'🏆 Treino completo!':pct>=66?'💪 Bom trabalho!':'👍 Continua assim!'}`;
-  showToast('✓ Sessão guardada!','success');
-  stopRestTimer();
+  db.sessions.sort((a,b)=>a.date.localeCompare(b.date));
+  saveDB('sessions'); updateSessionCount();
+  const pct=Math.round((done/total)*100);
+  const el=document.getElementById('session-summary');
+  el.style.display='block';
+  const dur=sessionSecs>0?` · ${padZ(Math.floor(sessionSecs/60))}:${padZ(sessionSecs%60)}`:'';
+  el.innerHTML=`<strong>${done} de ${total} séries</strong> concluídas (${pct}%)${dur}. ${pct===100?'🏆 Treino completo!':pct>=66?'💪 Bom trabalho!':'👍 Continua assim!'}`;
+  showToast('✓ Sessão guardada!','success'); stopRestTimer();
 }
 
 function updateSessionCount() {
-  const n = db.sessions.length;
-  document.getElementById('session-total').textContent = n;
-  document.getElementById('session-badge').textContent = `${n} sessão${n!==1?'ões':''}`;
+  const n=db.sessions.length;
+  document.getElementById('session-total').textContent=n;
+  document.getElementById('session-badge').textContent=`${n} sessão${n!==1?'ões':''}`;
 }
 
-// ══════════════════════
-// EX MODAL
-// ══════════════════════
 function openExModal(ex) {
-  const d = EX_DATA[ex];
-  document.getElementById('modal-name').textContent   = d.name;
-  document.getElementById('modal-muscle').textContent = d.muscle;
-  document.getElementById('modal-tip').innerHTML      = d.tip;
-  document.getElementById('modal-yt').href            = d.yt;
-  const wrap = document.getElementById('modal-img-wrap');
-  let imgIdx = 0;
-  function tryImg() {
-    if (imgIdx >= d.imgs.length) {
-      wrap.innerHTML = `<div class="modal-img-fallback">Imagem não disponível.<br>Usa o botão YouTube para ver o vídeo.</div>`;
-      return;
-    }
-    const img = new Image();
-    img.onload  = () => { wrap.innerHTML=''; wrap.appendChild(img); };
-    img.onerror = () => { imgIdx++; tryImg(); };
-    img.src = d.imgs[imgIdx];
-    img.alt = d.name;
-    img.style.cssText = 'width:100%;display:block;border-radius:12px;object-fit:cover';
-  }
-  wrap.innerHTML = '<div class="modal-img-fallback">A carregar…</div>';
-  tryImg();
+  const d=EX_DATA[ex];
+  document.getElementById('modal-name').textContent=d.name;
+  document.getElementById('modal-muscle').textContent=d.muscle;
+  document.getElementById('modal-tip').innerHTML=d.tip;
+  document.getElementById('modal-yt').href=d.yt;
+  document.getElementById('modal-illustration').innerHTML=SVG_ILLUSTRATIONS[ex]||'';
   document.getElementById('ex-modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
-function closeExModalDirect() {
+function closeExModalDirect(){
   document.getElementById('ex-modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
 
-// ══════════════════════
-// PROGRESS
-// ══════════════════════
 function renderProgress() {
-  const ex      = document.getElementById('prog-select').value;
-  const sessions= db.sessions.filter(s => s.exercises && s.exercises[ex]?.length>0);
-  const histEl  = document.getElementById('prog-history');
-  if (!sessions.length) {
-    histEl.innerHTML = `<div class="no-history">Sem sessões registadas para este exercício.<br><br>Completa o teu primeiro treino! 💪</div>`;
-    drawLineChart('prog-chart',[],[]);
-    return;
+  const ex=document.getElementById('prog-select').value;
+  const sessions=db.sessions.filter(s=>s.exercises&&s.exercises[ex]?.length>0);
+  const histEl=document.getElementById('prog-history');
+  if(!sessions.length){
+    histEl.innerHTML=`<div class="no-history">Sem sessões registadas para este exercício.<br><br>Completa o teu primeiro treino! 💪</div>`;
+    drawLineChart('prog-chart',[],[]);return;
   }
-  drawLineChart('prog-chart',
-    sessions.map(s => s.date.slice(5)),
-    sessions.map(s => { const kgs=s.exercises[ex].map(st=>st.kg||0).filter(k=>k>0); return kgs.length?Math.max(...kgs):0; })
-  );
-  histEl.innerHTML = [...sessions].reverse().map(s => {
-    const sH  = s.exercises[ex].map((st,i) => `<div class="history-set">S${i+1} <span class="kg">${st.kg??'—'} kg</span> <span class="reps">×${st.reps??'—'}</span></div>`).join('');
-    const dur = s.duration>0 ? ` · ${padZ(Math.floor(s.duration/60))}:${padZ(s.duration%60)}` : '';
+  drawLineChart('prog-chart',sessions.map(s=>s.date.slice(5)),
+    sessions.map(s=>{const kgs=s.exercises[ex].map(st=>st.kg||0).filter(k=>k>0);return kgs.length?Math.max(...kgs):0;}));
+  histEl.innerHTML=[...sessions].reverse().map(s=>{
+    const sH=s.exercises[ex].map((st,i)=>`<div class="history-set">S${i+1} <span class="kg">${st.kg??'—'} kg</span> <span class="reps">×${st.reps??'—'}</span></div>`).join('');
+    const dur=s.duration>0?` · ${padZ(Math.floor(s.duration/60))}:${padZ(s.duration%60)}`:'';
     return `<div class="history-entry">
       <div class="history-entry-header">
         <div class="history-date">${fmtDate(s.date)}${dur}</div>
         <div class="entry-actions">
           <button class="entry-btn btn-edit" onclick="openEditModal('${s.date}')">✏️</button>
-          <button class="entry-btn btn-del"  onclick="askDelete('${s.date}')">🗑</button>
+          <button class="entry-btn btn-del" onclick="askDelete('${s.date}')">🗑</button>
         </div>
       </div>
       <div class="history-sets">${sH}</div>
@@ -867,184 +986,123 @@ function renderProgress() {
   }).join('');
 }
 
-// ══════════════════════
-// EDIT
-// ══════════════════════
 function openEditModal(date) {
-  editingDate = date;
-  const session = db.sessions.find(s => s.date===date);
-  if (!session) return;
-  document.getElementById('edit-date').value  = date;
-  document.getElementById('edit-notes').value = session.notes||'';
-  let html = '';
-  EX_IDS.forEach(ex => {
-    const sets = (session.exercises && session.exercises[ex]) || [];
-    if (!sets.length) return;
-    html += `<div class="edit-ex-title">${EX_NAMES[ex]}</div>`;
-    for (let i=0; i<3; i++) {
-      const set = sets[i]||{};
-      html += `<div class="edit-set-row">
+  editingDate=date;
+  const session=db.sessions.find(s=>s.date===date);
+  if(!session)return;
+  document.getElementById('edit-date').value=date;
+  document.getElementById('edit-notes').value=session.notes||'';
+  let html='';
+  EX_IDS.forEach(ex=>{
+    const sets=(session.exercises&&session.exercises[ex])||[];
+    if(!sets.length)return;
+    html+=`<div class="edit-ex-title">${EX_NAMES[ex]}</div>`;
+    for(let i=0;i<3;i++){
+      const set=sets[i]||{};
+      html+=`<div class="edit-set-row">
         <div class="edit-set-num">S${i+1}</div>
         <div class="input-col"><div class="edit-input-label">kg</div><input class="edit-input" type="number" inputmode="decimal" step="0.5" value="${set.kg||''}" placeholder="—" id="edit-${ex}-s${i+1}-kg"></div>
         <div class="input-col"><div class="edit-input-label">reps</div><input class="edit-input" type="number" inputmode="numeric" value="${set.reps||''}" placeholder="—" id="edit-${ex}-s${i+1}-reps"></div>
       </div>`;
     }
   });
-  document.getElementById('edit-sets-container').innerHTML = html;
+  document.getElementById('edit-sets-container').innerHTML=html;
   document.getElementById('edit-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 function saveEdit() {
-  const newDate = document.getElementById('edit-date').value;
-  const session = db.sessions.find(s => s.date===editingDate);
-  if (!session) return;
-  if (newDate!==editingDate) { db.sessions=db.sessions.filter(s=>s.date!==newDate); session.date=newDate; }
-  session.notes = document.getElementById('edit-notes').value.trim();
-  EX_IDS.forEach(ex => {
-    if (!session.exercises?.[ex]) return;
-    for (let i=0; i<3; i++) {
+  const newDate=document.getElementById('edit-date').value;
+  const session=db.sessions.find(s=>s.date===editingDate);
+  if(!session)return;
+  if(newDate!==editingDate){db.sessions=db.sessions.filter(s=>s.date!==newDate);session.date=newDate;}
+  session.notes=document.getElementById('edit-notes').value.trim();
+  EX_IDS.forEach(ex=>{
+    if(!session.exercises?.[ex])return;
+    for(let i=0;i<3;i++){
       const kgEl=document.getElementById(`edit-${ex}-s${i+1}-kg`);
       const rpEl=document.getElementById(`edit-${ex}-s${i+1}-reps`);
-      if (kgEl&&rpEl&&session.exercises[ex][i]) {
-        session.exercises[ex][i].kg   = parseFloat(kgEl.value)||null;
-        session.exercises[ex][i].reps = parseInt(rpEl.value)||null;
+      if(kgEl&&rpEl&&session.exercises[ex][i]){
+        session.exercises[ex][i].kg=parseFloat(kgEl.value)||null;
+        session.exercises[ex][i].reps=parseInt(rpEl.value)||null;
       }
     }
   });
-  db.sessions.sort((a,b) => a.date.localeCompare(b.date));
+  db.sessions.sort((a,b)=>a.date.localeCompare(b.date));
   saveDB('sessions');
   document.getElementById('edit-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-  EX_IDS.forEach(ex => buildSets(ex));
+  document.body.style.overflow='';
+  EX_IDS.forEach(ex=>buildSets(ex));
   renderProgress();
   showToast('✓ Atualizado!','success');
 }
 
-// ══════════════════════
-// DELETE
-// ══════════════════════
-function askDelete(date) { pendingDeleteDate=date; document.getElementById('confirm-overlay').classList.add('open'); }
-function closeConfirm()  { document.getElementById('confirm-overlay').classList.remove('open'); pendingDeleteDate=null; }
-function confirmDelete() {
-  if (!pendingDeleteDate) return;
-  db.sessions = db.sessions.filter(s => s.date!==pendingDeleteDate);
-  saveDB('sessions');
-  closeConfirm();
-  updateSessionCount();
-  EX_IDS.forEach(ex => buildSets(ex));
-  renderProgress();
+function askDelete(date){pendingDeleteDate=date;document.getElementById('confirm-overlay').classList.add('open');}
+function closeConfirm(){document.getElementById('confirm-overlay').classList.remove('open');pendingDeleteDate=null;}
+function confirmDelete(){
+  if(!pendingDeleteDate)return;
+  db.sessions=db.sessions.filter(s=>s.date!==pendingDeleteDate);
+  saveDB('sessions');closeConfirm();updateSessionCount();
+  EX_IDS.forEach(ex=>buildSets(ex));renderProgress();
   showToast('🗑 Sessão apagada','warn');
 }
 
-// ══════════════════════
-// BODY TRACKING
-// ══════════════════════
 function saveBodyEntry() {
-  const dateVal = document.getElementById('b-data').value || todayKey();
-  const entry   = { date:dateVal };
-  let hasData   = false;
-  BODY_FIELDS.forEach(f => {
-    const val = parseFloat(document.getElementById('b-'+f).value);
-    if (!isNaN(val)&&val>0) { entry[f]=val; hasData=true; }
-  });
-  if (!hasData) { showToast('Preenche pelo menos um campo','warn'); return; }
-  db.body = db.body.filter(e => e.date!==dateVal);
-  db.body.push(entry);
-  db.body.sort((a,b) => a.date.localeCompare(b.date));
-  saveDB('body');
-  BODY_FIELDS.forEach(f => { document.getElementById('b-'+f).value=''; });
-  renderBodyHistory(); drawBodyChart();
-  showToast('📏 Medição guardada!','success');
+  const dateVal=document.getElementById('b-data').value||todayKey();
+  const entry={date:dateVal};let hasData=false;
+  BODY_FIELDS.forEach(f=>{const val=parseFloat(document.getElementById('b-'+f).value);if(!isNaN(val)&&val>0){entry[f]=val;hasData=true;}});
+  if(!hasData){showToast('Preenche pelo menos um campo','warn');return;}
+  db.body=db.body.filter(e=>e.date!==dateVal);db.body.push(entry);
+  db.body.sort((a,b)=>a.date.localeCompare(b.date));saveDB('body');
+  BODY_FIELDS.forEach(f=>{document.getElementById('b-'+f).value='';});
+  renderBodyHistory();drawBodyChart();showToast('📏 Medição guardada!','success');
 }
-function setBodyMetric(metric, el) {
-  currentBodyMetric = metric;
-  document.querySelectorAll('.body-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('body-chart-label').textContent = `Evolução de ${BODY_CHART_LABELS[metric]}`;
-  drawBodyChart();
+function setBodyMetric(metric,el){
+  currentBodyMetric=metric;
+  document.querySelectorAll('.body-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+  document.getElementById('body-chart-label').textContent=`Evolução de ${BODY_CHART_LABELS[metric]}`;drawBodyChart();
 }
-function drawBodyChart() {
-  const entries = db.body.filter(e => e[currentBodyMetric]!=null);
-  drawLineChart('body-chart', entries.map(e=>e.date.slice(5)), entries.map(e=>e[currentBodyMetric]), '#FF9A3C','#FFD166');
+function drawBodyChart(){
+  const entries=db.body.filter(e=>e[currentBodyMetric]!=null);
+  drawLineChart('body-chart',entries.map(e=>e.date.slice(5)),entries.map(e=>e[currentBodyMetric]),'#FF9A3C','#FFD166');
 }
-function renderBodyHistory() {
-  const el = document.getElementById('body-history');
-  if (!db.body.length) { el.innerHTML=`<div class="no-history">Ainda sem registos.<br>Podes adicionar datas passadas! 📅</div>`; return; }
-  el.innerHTML = [...db.body].reverse().map((entry,idx,arr) => {
-    const prev = arr[idx+1];
-    const valsHtml = BODY_FIELDS.filter(f=>entry[f]!=null).map(f => {
-      const val=entry[f], prevVal=prev?prev[f]:null;
-      let diffHtml='';
-      if (prevVal!=null&&val!==prevVal) {
-        const diff=val-prevVal, sign=diff>0?'+':'';
-        const cls=f==='peso'?(diff<0?'down':'up'):(diff>0?'up':'down');
-        diffHtml=`<div class="body-val-diff ${cls}">${sign}${diff.toFixed(1)}</div>`;
-      }
+function renderBodyHistory(){
+  const el=document.getElementById('body-history');
+  if(!db.body.length){el.innerHTML=`<div class="no-history">Ainda sem registos.<br>Podes adicionar datas passadas! 📅</div>`;return;}
+  el.innerHTML=[...db.body].reverse().map((entry,idx,arr)=>{
+    const prev=arr[idx+1];
+    const valsHtml=BODY_FIELDS.filter(f=>entry[f]!=null).map(f=>{
+      const val=entry[f],prevVal=prev?prev[f]:null;let diffHtml='';
+      if(prevVal!=null&&val!==prevVal){const diff=val-prevVal,sign=diff>0?'+':'';const cls=f==='peso'?(diff<0?'down':'up'):(diff>0?'up':'down');diffHtml=`<div class="body-val-diff ${cls}">${sign}${diff.toFixed(1)}</div>`;}
       return `<div class="body-val"><div class="body-val-num">${val}</div><div class="body-val-label">${BODY_LABELS[f]}</div>${diffHtml}</div>`;
     }).join('');
-    return `<div class="body-entry">
-      <div class="body-entry-header">
-        <div class="body-entry-date">${fmtDate(entry.date)}</div>
-        <button class="entry-btn btn-del" onclick="deleteBodyEntry('${entry.date}')">🗑</button>
-      </div>
-      <div class="body-entry-vals">${valsHtml}</div>
-    </div>`;
+    return `<div class="body-entry"><div class="body-entry-header"><div class="body-entry-date">${fmtDate(entry.date)}</div><button class="entry-btn btn-del" onclick="deleteBodyEntry('${entry.date}')">🗑</button></div><div class="body-entry-vals">${valsHtml}</div></div>`;
   }).join('');
 }
-function deleteBodyEntry(date) {
-  db.body = db.body.filter(e => e.date!==date);
-  saveDB('body'); renderBodyHistory(); drawBodyChart();
-  showToast('🗑 Medição apagada','warn');
+function deleteBodyEntry(date){db.body=db.body.filter(e=>e.date!==date);saveDB('body');renderBodyHistory();drawBodyChart();showToast('🗑 Medição apagada','warn');}
+
+function drawLineChart(canvasId,labels,values,color1='#FF6B4A',color2='#FFD166'){
+  const canvas=document.getElementById(canvasId);if(!canvas)return;
+  const dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect();
+  const W=(rect.width||300)*dpr,H=150*dpr;canvas.width=W;canvas.height=H;
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);const w=W/dpr,h=H/dpr;ctx.clearRect(0,0,w,h);
+  if(!values.length){ctx.fillStyle='#666';ctx.font='13px Inter';ctx.textAlign='center';ctx.fillText('Sem dados ainda',w/2,h/2);return;}
+  const pad={top:16,right:16,bottom:28,left:42};const cw=w-pad.left-pad.right,ch=h-pad.top-pad.bottom;
+  const minV=Math.min(...values),maxV=Math.max(...values),range=maxV-minV||1;const lo=minV-range*.15,hi=maxV+range*.15;
+  const toY=v=>pad.top+ch-((v-lo)/(hi-lo))*ch;const toX=i=>values.length===1?pad.left+cw/2:pad.left+(i/(values.length-1))*cw;
+  ctx.strokeStyle='rgba(255,255,255,.07)';ctx.lineWidth=1;
+  for(let i=0;i<=3;i++){const y=pad.top+(i/3)*ch;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();ctx.fillStyle='#777';ctx.font='10px Inter';ctx.textAlign='right';ctx.fillText((hi-(i/3)*(hi-lo)).toFixed(1),pad.left-4,y+4);}
+  if(values.length===1){ctx.beginPath();ctx.arc(toX(0),toY(values[0]),5,0,Math.PI*2);ctx.fillStyle=color1;ctx.fill();return;}
+  const lg=ctx.createLinearGradient(pad.left,0,pad.left+cw,0);lg.addColorStop(0,color1);lg.addColorStop(1,color2);
+  const fg=ctx.createLinearGradient(0,pad.top,0,pad.top+ch);fg.addColorStop(0,color1+'40');fg.addColorStop(1,color1+'00');
+  ctx.beginPath();values.forEach((v,i)=>i===0?ctx.moveTo(toX(i),toY(v)):ctx.lineTo(toX(i),toY(v)));ctx.lineTo(toX(values.length-1),pad.top+ch);ctx.lineTo(toX(0),pad.top+ch);ctx.closePath();ctx.fillStyle=fg;ctx.fill();
+  ctx.beginPath();ctx.strokeStyle=lg;ctx.lineWidth=2.5;ctx.lineJoin='round';values.forEach((v,i)=>i===0?ctx.moveTo(toX(i),toY(v)):ctx.lineTo(toX(i),toY(v)));ctx.stroke();
+  values.forEach((v,i)=>{ctx.beginPath();ctx.arc(toX(i),toY(v),4,0,Math.PI*2);ctx.fillStyle=color1;ctx.fill();ctx.fillStyle='#777';ctx.font='9px Inter';ctx.textAlign='center';ctx.fillText(labels[i],toX(i),h-6);});
 }
 
-// ══════════════════════
-// CHART
-// ══════════════════════
-function drawLineChart(canvasId, labels, values, color1='#FF6B4A', color2='#FFD166') {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const dpr=window.devicePixelRatio||1, rect=canvas.getBoundingClientRect();
-  const W=(rect.width||300)*dpr, H=150*dpr;
-  canvas.width=W; canvas.height=H;
-  const ctx=canvas.getContext('2d');
-  ctx.scale(dpr,dpr);
-  const w=W/dpr, h=H/dpr;
-  ctx.clearRect(0,0,w,h);
-  if (!values.length) { ctx.fillStyle='#666'; ctx.font='13px Inter'; ctx.textAlign='center'; ctx.fillText('Sem dados ainda',w/2,h/2); return; }
-  const pad={top:16,right:16,bottom:28,left:42};
-  const cw=w-pad.left-pad.right, ch=h-pad.top-pad.bottom;
-  const minV=Math.min(...values), maxV=Math.max(...values), range=maxV-minV||1;
-  const lo=minV-range*.15, hi=maxV+range*.15;
-  const toY=v=>pad.top+ch-((v-lo)/(hi-lo))*ch;
-  const toX=i=>values.length===1?pad.left+cw/2:pad.left+(i/(values.length-1))*cw;
-  ctx.strokeStyle='rgba(255,255,255,.07)'; ctx.lineWidth=1;
-  for (let i=0;i<=3;i++) {
-    const y=pad.top+(i/3)*ch;
-    ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(pad.left+cw,y); ctx.stroke();
-    ctx.fillStyle='#777'; ctx.font='10px Inter'; ctx.textAlign='right';
-    ctx.fillText((hi-(i/3)*(hi-lo)).toFixed(1),pad.left-4,y+4);
-  }
-  if (values.length===1) { ctx.beginPath(); ctx.arc(toX(0),toY(values[0]),5,0,Math.PI*2); ctx.fillStyle=color1; ctx.fill(); return; }
-  const lg=ctx.createLinearGradient(pad.left,0,pad.left+cw,0); lg.addColorStop(0,color1); lg.addColorStop(1,color2);
-  const fg=ctx.createLinearGradient(0,pad.top,0,pad.top+ch); fg.addColorStop(0,color1+'40'); fg.addColorStop(1,color1+'00');
-  ctx.beginPath(); values.forEach((v,i)=>i===0?ctx.moveTo(toX(i),toY(v)):ctx.lineTo(toX(i),toY(v)));
-  ctx.lineTo(toX(values.length-1),pad.top+ch); ctx.lineTo(toX(0),pad.top+ch); ctx.closePath(); ctx.fillStyle=fg; ctx.fill();
-  ctx.beginPath(); ctx.strokeStyle=lg; ctx.lineWidth=2.5; ctx.lineJoin='round';
-  values.forEach((v,i)=>i===0?ctx.moveTo(toX(i),toY(v)):ctx.lineTo(toX(i),toY(v))); ctx.stroke();
-  values.forEach((v,i)=>{
-    ctx.beginPath(); ctx.arc(toX(i),toY(v),4,0,Math.PI*2); ctx.fillStyle=color1; ctx.fill();
-    ctx.fillStyle='#777'; ctx.font='9px Inter'; ctx.textAlign='center'; ctx.fillText(labels[i],toX(i),h-6);
-  });
-}
-
-// ══════════════════════
-// TOAST
-// ══════════════════════
 let toastTimer;
-function showToast(msg, type='success') {
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.className=`toast ${type} show`;
-  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2500);
+function showToast(msg,type='success'){
+  const t=document.getElementById('toast');t.textContent=msg;t.className=`toast ${type} show`;
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2500);
 }
 </script>
 
