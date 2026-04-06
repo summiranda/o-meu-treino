@@ -38,12 +38,13 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 
 .tabs{ display:flex; background:#1C1C1C; border-bottom:1px solid #333; position:sticky; top:7rem; z-index:97; overflow-x:auto; }
 .tabs::-webkit-scrollbar{ display:none; }
-.tab{ flex:1; min-width:60px; padding:.7rem .3rem; text-align:center; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:#888; cursor:pointer; border-bottom:2px solid transparent; transition:all .2s; font-weight:700; font-family:‘Syne’,sans-serif; white-space:nowrap; }
+.tab{ flex:1; min-width:55px; padding:.7rem .2rem; text-align:center; font-size:.58rem; letter-spacing:.05em; text-transform:uppercase; color:#888; cursor:pointer; border-bottom:2px solid transparent; transition:all .2s; font-weight:700; font-family:‘Syne’,sans-serif; white-space:nowrap; }
 .tab.active{ color:#FF6B4A; border-bottom-color:#FF6B4A; }
 
 .screen{ display:none; padding:1rem 1rem 2rem; }
 .screen.active{ display:block; }
 
+/* TIMER BAR */
 .session-timer-bar{ background:#1C1C1C; border:1px solid #333; border-left:4px solid #FF9A3C; border-radius:12px; padding:.9rem 1.2rem; margin-bottom:1.2rem; display:flex; justify-content:space-between; align-items:center; }
 .timer-label{ font-size:.58rem; text-transform:uppercase; letter-spacing:.1em; color:#888; font-weight:700; }
 .timer-display{ font-family:‘Syne’,sans-serif; font-size:1.6rem; font-weight:800; color:#FF9A3C; line-height:1; margin-top:.1rem; }
@@ -53,6 +54,7 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .timer-stop{ background:#FF4D4D; color:#fff; display:none; }
 .timer-reset{ background:#242424; color:#888; border:1px solid #333; display:none; }
 
+/* HERO */
 .hero-strip{ background:#1C1C1C; border:1px solid #333; border-left:4px solid #FF6B4A; border-radius:12px; padding:1rem 1.2rem; margin-bottom:1.2rem; display:flex; justify-content:space-between; align-items:center; }
 .hero-date-label{ font-size:.6rem; text-transform:uppercase; letter-spacing:.1em; color:#888; margin-bottom:.2rem; font-weight:600; }
 .hero-date{ font-family:‘Syne’,sans-serif; font-size:1rem; font-weight:700; color:#FFD166; }
@@ -63,14 +65,14 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .section-div::after{ content:’’; flex:1; height:1px; background:#333; }
 .section-div.optional{ color:#FFD166; }
 .section-div.optional::after{ background:#444; }
-
 .optional-note{ background:rgba(255,209,102,.07); border:1px solid rgba(255,209,102,.2); border-radius:10px; padding:.7rem 1rem; margin-bottom:.8rem; font-size:.75rem; color:#FFD166; line-height:1.6; }
 
+/* EX CARD */
 .ex-card{ background:#1C1C1C; border:1px solid #333; border-radius:12px; margin-bottom:.8rem; overflow:hidden; }
 .ex-card.optional-card{ border-color:rgba(255,209,102,.25); }
 .ex-header{ padding:.85rem 1rem; display:flex; justify-content:space-between; align-items:flex-start; gap:.6rem; }
-.ex-header.tappable, .ex-header.expandable{ cursor:pointer; }
-.ex-header.tappable:active, .ex-header.expandable:active{ background:#242424; }
+.ex-header.tappable,.ex-header.expandable{ cursor:pointer; }
+.ex-header.tappable:active,.ex-header.expandable:active{ background:#242424; }
 .ex-num{ font-size:.52rem; letter-spacing:.15em; text-transform:uppercase; color:#888; margin-bottom:.15rem; font-weight:600; }
 .ex-num.optional-num{ color:#FFD166; }
 .ex-name{ font-family:‘Syne’,sans-serif; font-size:.95rem; font-weight:700; color:#F2F2F2; line-height:1.2; }
@@ -92,6 +94,7 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .step-text{ font-size:.78rem; color:#CCC; line-height:1.7; }
 .step-text strong{ color:#F2F2F2; }
 
+/* SETS */
 .sets-area{ border-top:1px solid #333; padding:.8rem 1rem; }
 .sets-label{ font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:#888; margin-bottom:.6rem; font-weight:700; }
 .set-row{ display:grid; grid-template-columns:1.8rem 1fr 1fr 1.6rem 2rem; gap:.4rem; align-items:center; margin-bottom:.5rem; }
@@ -106,13 +109,22 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .set-done{ width:2rem; height:2rem; border-radius:50%; border:2px solid #333; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.8rem; transition:all .2s; color:#888; }
 .set-done.completed{ background:#4CAF7D; border-color:#4CAF7D; color:#fff; }
 
-.rest-timer{ position:fixed; bottom:5.5rem; left:50%; transform:translateX(-50%); background:#1C1C1C; border:2px solid #FF6B4A; border-radius:16px; padding:.8rem 1.5rem; display:flex; align-items:center; gap:1.2rem; z-index:150; box-shadow:0 4px 24px rgba(255,107,74,.25); opacity:0; pointer-events:none; transition:opacity .3s; }
-.rest-timer.visible{ opacity:1; pointer-events:all; }
-.rest-timer-label{ font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; color:#888; font-weight:700; }
-.rest-timer-count{ font-family:‘Syne’,sans-serif; font-size:2.2rem; font-weight:800; color:#FF6B4A; line-height:1; }
-.rest-timer-skip{ font-size:.65rem; color:#888; background:#242424; border:1px solid #333; border-radius:8px; padding:.35rem .8rem; cursor:pointer; font-family:‘Inter’,sans-serif; }
+/* PROGRESSION SUGGESTION */
+.progression-suggestion{ background:rgba(76,175,125,.08); border:1px solid rgba(76,175,125,.25); border-radius:10px; padding:.7rem 1rem; margin-top:.6rem; font-size:.75rem; color:#4CAF7D; line-height:1.6; display:none; }
+.progression-suggestion strong{ color:#4CAF7D; }
 
-.notes-area{ margin-top:.8rem; }
+/* REST TIMER */
+.rest-timer{ position:fixed; bottom:5.5rem; left:50%; transform:translateX(-50%); background:#1C1C1C; border:2px solid #FF6B4A; border-radius:16px; padding:.8rem 1.5rem; display:flex; align-items:center; gap:1.2rem; z-index:150; box-shadow:0 4px 24px rgba(255,107,74,.25); opacity:0; pointer-events:none; transition:opacity .3s; min-width:220px; }
+.rest-timer.visible{ opacity:1; pointer-events:all; }
+.rest-timer.long-rest{ border-color:#FF9A3C; box-shadow:0 4px 24px rgba(255,154,60,.3); }
+.rest-timer-info{ flex:1; }
+.rest-timer-label{ font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; color:#888; font-weight:700; }
+.rest-timer-type{ font-size:.62rem; color:#FF9A3C; font-weight:600; margin-top:.1rem; }
+.rest-timer-count{ font-family:‘Syne’,sans-serif; font-size:2.2rem; font-weight:800; color:#FF6B4A; line-height:1; }
+.rest-timer.long-rest .rest-timer-count{ color:#FF9A3C; }
+.rest-timer-skip{ font-size:.65rem; color:#888; background:#242424; border:1px solid #333; border-radius:8px; padding:.35rem .8rem; cursor:pointer; font-family:‘Inter’,sans-serif; white-space:nowrap; }
+
+/* NOTES */
 .notes-input{ width:100%; background:#242424; border:1px solid #333; border-radius:10px; padding:.7rem .9rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.85rem; resize:none; height:65px; line-height:1.5; }
 .notes-input:focus{ outline:none; border-color:#FF6B4A; }
 .notes-input::placeholder{ color:#555; }
@@ -121,8 +133,10 @@ body{ font-family:'Inter',sans-serif; min-height:100vh; padding-bottom:6rem; ove
 .save-btn{ width:100%; padding:1rem; background:#FF6B4A; color:#fff; border:none; border-radius:12px; font-family:‘Syne’,sans-serif; font-size:.95rem; font-weight:800; cursor:pointer; margin-top:.6rem; }
 .save-btn:active{ opacity:.85; }
 
+/* SCREEN TITLE */
 .screen-title{ font-family:‘Syne’,sans-serif; font-size:1.3rem; font-weight:800; color:#F2F2F2; margin-bottom:.3rem; }
 .screen-sub{ font-size:.7rem; color:#888; margin-bottom:1rem; }
+
 .ex-select{ background:#242424; border:1px solid #333; border-radius:10px; padding:.75rem 1rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.88rem; width:100%; margin-bottom:1.2rem; -webkit-appearance:none; appearance:none; cursor:pointer; }
 .ex-select:focus{ outline:none; border-color:#FF6B4A; }
 .mini-chart{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1rem; margin-bottom:1.2rem; }
@@ -143,16 +157,17 @@ canvas{ width:100%!important; display:block; }
 .history-note{ font-size:.72rem; color:#888; font-style:italic; padding-top:.3rem; }
 .no-history{ text-align:center; color:#888; font-size:.82rem; padding:2.5rem 0; line-height:2; }
 
-/* SVG ILLUSTRATION */
+/* SVG */
 .ex-illustration{ background:#1A1A1A; border-radius:12px; padding:1rem; margin-bottom:1rem; display:flex; align-items:center; justify-content:center; }
 .ex-illustration svg{ max-width:100%; height:auto; }
 
+/* BODY FORM */
 .body-form{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1.1rem; margin-bottom:1.2rem; }
 .body-form-title{ font-family:‘Syne’,sans-serif; font-size:1rem; font-weight:700; color:#F2F2F2; margin-bottom:.9rem; }
 .body-date-row{ margin-bottom:.8rem; }
-.body-date-row label{ font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; color:#888; font-weight:700; display:block; margin-bottom:.3rem; }
-.body-date-input{ background:#242424; border:1px solid #333; border-radius:8px; padding:.6rem .8rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.9rem; width:100%; -webkit-appearance:none; appearance:none; }
-.body-date-input:focus{ outline:none; border-color:#FF9A3C; }
+.body-date-row label,.field-label{ font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; color:#888; font-weight:700; display:block; margin-bottom:.3rem; }
+.body-date-input,.field-input{ background:#242424; border:1px solid #333; border-radius:8px; padding:.6rem .8rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.9rem; width:100%; -webkit-appearance:none; appearance:none; }
+.body-date-input:focus,.field-input:focus{ outline:none; border-color:#FF9A3C; }
 .body-section-label{ font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:#FF9A3C; font-weight:700; margin:.9rem 0 .5rem; display:flex; align-items:center; gap:.5rem; }
 .body-section-label::after{ content:’’; flex:1; height:1px; background:#333; }
 .body-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-bottom:.5rem; }
@@ -161,8 +176,9 @@ canvas{ width:100%!important; display:block; }
 .body-field input{ background:#242424; border:1px solid #333; border-radius:8px; padding:.6rem .7rem; color:#F2F2F2; font-family:‘Inter’,sans-serif; font-size:.9rem; -webkit-appearance:none; appearance:none; width:100%; }
 .body-field input:focus{ outline:none; border-color:#FF9A3C; }
 .body-field input::placeholder{ color:#555; }
-.body-save-btn{ width:100%; padding:.9rem; background:#FF9A3C; color:#fff; border:none; border-radius:10px; font-family:‘Syne’,sans-serif; font-size:.88rem; font-weight:800; cursor:pointer; margin-top:.9rem; }
-.body-save-btn:active{ opacity:.85; }
+.body-save-btn,.form-save-btn{ width:100%; padding:.9rem; background:#FF9A3C; color:#fff; border:none; border-radius:10px; font-family:‘Syne’,sans-serif; font-size:.88rem; font-weight:800; cursor:pointer; margin-top:.9rem; }
+.form-save-btn{ background:#5B9BD5; }
+.body-save-btn:active,.form-save-btn:active{ opacity:.85; }
 .body-chart-tabs{ display:flex; gap:.4rem; margin-bottom:.9rem; flex-wrap:wrap; }
 .body-tab{ font-size:.58rem; letter-spacing:.06em; text-transform:uppercase; padding:.35rem .75rem; border-radius:6px; cursor:pointer; border:1px solid #333; color:#888; transition:all .2s; font-weight:700; font-family:‘Syne’,sans-serif; background:#1C1C1C; }
 .body-tab.active{ background:#FF9A3C; color:#fff; border-color:#FF9A3C; }
@@ -177,6 +193,36 @@ canvas{ width:100%!important; display:block; }
 .body-val-diff.up{ color:#FF4D4D; }
 .body-val-diff.down{ color:#4CAF7D; }
 
+/* METRICS */
+.metrics-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin-bottom:1.5rem; }
+.metric-card{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1rem; text-align:center; }
+.metric-val{ font-family:‘Syne’,sans-serif; font-size:1.8rem; font-weight:800; color:#FF6B4A; line-height:1; }
+.metric-label{ font-size:.58rem; color:#888; text-transform:uppercase; letter-spacing:.08em; font-weight:700; margin-top:.3rem; }
+.metric-sub{ font-size:.65rem; color:#555; margin-top:.2rem; }
+
+.streak-card{ background:#1C1C1C; border:1px solid #333; border-left:4px solid #FFD166; border-radius:12px; padding:1rem 1.2rem; margin-bottom:1rem; display:flex; align-items:center; gap:1rem; }
+.streak-icon{ font-size:1.8rem; }
+.streak-val{ font-family:‘Syne’,sans-serif; font-size:1.4rem; font-weight:800; color:#FFD166; }
+.streak-label{ font-size:.65rem; color:#888; }
+
+.bar-chart-wrap{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1rem; margin-bottom:1.2rem; }
+.bar-chart-label{ font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; color:#888; margin-bottom:.8rem; font-weight:700; }
+
+/* ACTIVITIES (home/bike log) */
+.activity-form{ background:#1C1C1C; border:1px solid #333; border-radius:12px; padding:1.1rem; margin-bottom:1.2rem; }
+.activity-form-title{ font-family:‘Syne’,sans-serif; font-size:1rem; font-weight:700; color:#F2F2F2; margin-bottom:.9rem; }
+.activity-type-btns{ display:flex; gap:.5rem; margin-bottom:.8rem; flex-wrap:wrap; }
+.activity-type-btn{ font-size:.65rem; font-weight:700; font-family:‘Syne’,sans-serif; text-transform:uppercase; padding:.4rem .9rem; border-radius:8px; cursor:pointer; border:1px solid #333; color:#888; background:#242424; transition:all .2s; }
+.activity-type-btn.active{ background:#5B9BD5; color:#fff; border-color:#5B9BD5; }
+.activity-row{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-bottom:.8rem; }
+.activity-entry{ background:#1C1C1C; border:1px solid #333; border-radius:10px; padding:.8rem 1rem; margin-bottom:.6rem; display:flex; justify-content:space-between; align-items:center; }
+.activity-entry-left .activity-type-tag{ font-size:.58rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:#5B9BD5; margin-bottom:.2rem; }
+.activity-entry-left .activity-date{ font-size:.6rem; color:#888; }
+.activity-entry-right{ text-align:right; }
+.activity-duration{ font-family:‘Syne’,sans-serif; font-size:1.1rem; font-weight:800; color:#5B9BD5; }
+.activity-duration-label{ font-size:.52rem; color:#888; }
+
+/* TIPS */
 .tip-card{ background:#1C1C1C; border:1px solid #333; border-left:3px solid #FF6B4A; border-radius:10px; padding:1rem 1.1rem; margin-bottom:.9rem; }
 .tip-card.tip-optional{ border-left-color:#FFD166; }
 .tip-ex-name{ font-family:‘Syne’,sans-serif; font-size:1rem; font-weight:700; color:#F2F2F2; margin-bottom:.3rem; }
@@ -184,6 +230,7 @@ canvas{ width:100%!important; display:block; }
 .tip-text{ font-size:.8rem; color:#CCC; line-height:1.75; }
 .tip-text strong{ color:#F2F2F2; }
 
+/* MODALS */
 .ex-modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:300; display:flex; align-items:flex-end; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s; }
 .ex-modal-overlay.open{ opacity:1; pointer-events:all; }
 .ex-modal{ background:#1C1C1C; border-radius:20px 20px 0 0; width:100%; max-width:500px; padding:1.5rem 1.2rem 2.5rem; border-top:1px solid #333; transform:translateY(100%); transition:transform .35s cubic-bezier(.32,.72,0,1); position:relative; max-height:90vh; overflow-y:auto; }
@@ -261,6 +308,7 @@ canvas{ width:100%!important; display:block; }
   <div class="tab active" onclick="showTab('treino',this)">🏋️ Treino</div>
   <div class="tab" onclick="showTab('progresso',this)">📈 Cargas</div>
   <div class="tab" onclick="showTab('corpo',this)">⚖️ Corpo</div>
+  <div class="tab" onclick="showTab('metricas',this)">📊 Métricas</div>
   <div class="tab" onclick="showTab('dicas',this)">💡 Dicas</div>
 </div>
 
@@ -298,7 +346,7 @@ canvas{ width:100%!important; display:block; }
     </div>
     <div class="ex-instructions" id="instr-a1">
       <div class="instruction-step"><div class="step-num">1</div><div class="step-text"><strong>Ombros:</strong> Círculos lentos para a frente 10×, depois para trás 10×.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Pescoço:</strong> Inclina a cabeça para cada lado, segura 5 seg. 3× por lado. <strong>Não forces rotações completas.</strong></div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Pescoço:</strong> Inclina a cabeça para cada lado, segura 5 seg. 3× por lado.</div></div>
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text"><strong>Pulsos:</strong> Roda 10× para cada lado. Abre e fecha as mãos 10×.</div></div>
       <div class="instruction-step"><div class="step-num">4</div><div class="step-text"><strong>Cotovelos:</strong> Estende e dobra os braços 10× alternando.</div></div>
     </div>
@@ -309,9 +357,9 @@ canvas{ width:100%!important; display:block; }
       <div class="ex-badge badge-none">Elástico</div>
     </div>
     <div class="ex-instructions" id="instr-a2">
-      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Cotovelo dobrado a <strong>90° junto ao corpo.</strong> Antebraço para a frente.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Com elástico ou haltere leve (1–2 kg), roda o antebraço para fora sem mover o cotovelo.</div></div>
-      <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Volta devagar. 15 repetições por braço.</div></div>
+      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Cotovelo dobrado a <strong>90° junto ao corpo.</strong></div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Com elástico ou haltere leve, roda o antebraço para fora sem mover o cotovelo.</div></div>
+      <div class="instruction-step"><div class="step-num">3</div><div class="step-text">15 repetições por braço, devagar.</div></div>
     </div>
   </div>
 
@@ -319,29 +367,35 @@ canvas{ width:100%!important; display:block; }
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b1')"><div><div class="ex-num">B1 · Principal</div><div class="ex-name">Puxada à frente <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Grande dorsal · Bíceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b1"></div></div>
+    <div class="progression-suggestion" id="prog-b1"></div>
   </div>
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b2')"><div><div class="ex-num">B2 · Principal</div><div class="ex-name">Remada na máquina <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Rombóides · Trapézio · Bíceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b2"></div></div>
+    <div class="progression-suggestion" id="prog-b2"></div>
   </div>
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b3')"><div><div class="ex-num">B3 · Principal</div><div class="ex-name">Press de peito <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Peitoral · Tríceps · 3×10 rep</div></div><div class="ex-badge badge-maq">Máquina</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b3"></div></div>
+    <div class="progression-suggestion" id="prog-b3"></div>
   </div>
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b4')"><div><div class="ex-num">B4 · Principal</div><div class="ex-name">Curl de bíceps <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Bíceps · 3×10 rep</div></div><div class="ex-badge badge-halt">Halteres</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b4"></div></div>
+    <div class="progression-suggestion" id="prog-b4"></div>
   </div>
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b5')"><div><div class="ex-num">B5 · Principal</div><div class="ex-name">Extensão de tríceps <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Tríceps · 3×10 rep</div></div><div class="ex-badge badge-cabo">Cabo/Polia</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b5"></div></div>
+    <div class="progression-suggestion" id="prog-b5"></div>
   </div>
   <div class="ex-card">
     <div class="ex-header tappable" onclick="openExModal('b6')"><div><div class="ex-num">B6 · Principal</div><div class="ex-name">Elevação lateral <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Deltóide médio · 3×12 rep</div></div><div class="ex-badge badge-halt">Halteres</div></div>
     <div class="sets-area"><div class="sets-label">Registo de séries</div><div id="sets-b6"></div></div>
+    <div class="progression-suggestion" id="prog-b6"></div>
   </div>
 
-  <div class="section-div optional">Exercício opcional <span style="font-size:.55rem;font-weight:400;letter-spacing:0;text-transform:none;color:#888">· +10 min se tiveres tempo</span></div>
+  <div class="section-div optional">Exercício opcional <span style="font-size:.55rem;font-weight:400;letter-spacing:0;text-transform:none;color:#888">· +10 min</span></div>
   <div class="optional-note">⭐ <strong>Só se tiveres tempo e energia.</strong> O treino está completo sem este exercício.</div>
   <div class="ex-card optional-card">
     <div class="ex-header tappable" onclick="openExModal('b7')"><div><div class="ex-num optional-num">B7 · Opcional</div><div class="ex-name">Face pull no cabo <span class="ex-tap-hint">▶ ver</span></div><div class="ex-meta">Trapézio médio · Rombóides · Rotadores · 3×15 rep</div></div><div class="ex-badge badge-opt">Cabo</div></div>
@@ -352,8 +406,8 @@ canvas{ width:100%!important; display:block; }
   <div class="ex-card">
     <div class="ex-header expandable" onclick="toggleInstr('c1')"><div><div class="ex-num">C1 · Retorno</div><div class="ex-name">Alongamento cruzado do ombro <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Deltóide posterior · 30 s × lado × 2</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c1">
-      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Estende o braço direito à frente do peito, paralelo ao chão.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Com o braço esquerdo, pressiona o cotovelo direito em direção ao peito. Sente o alongamento na parte de trás do ombro.</div></div>
+      <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Estende o braço direito à frente do peito.</div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Com o braço esquerdo, pressiona o cotovelo direito em direção ao peito.</div></div>
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Segura <strong>30 segundos</strong>. Muda de lado. Repete 2× por lado.</div></div>
     </div>
   </div>
@@ -361,7 +415,7 @@ canvas{ width:100%!important; display:block; }
     <div class="ex-header expandable" onclick="toggleInstr('c2')"><div><div class="ex-num">C2 · Retorno</div><div class="ex-name">Alongamento bíceps + peitoral <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Bíceps · Peitoral · 30 s × lado × 2</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c2">
       <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Apoia a palma da mão numa parede com o braço estendido ao nível do ombro.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Roda o corpo lentamente para o lado oposto. Sente o alongamento ao longo do bíceps e peitoral.</div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text">Roda o corpo lentamente para o lado oposto.</div></div>
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text">Segura <strong>30 segundos</strong>. Muda de lado. Repete 2× por lado.</div></div>
     </div>
   </div>
@@ -369,7 +423,7 @@ canvas{ width:100%!important; display:block; }
     <div class="ex-header expandable" onclick="toggleInstr('c3')"><div><div class="ex-num">C3 · Retorno</div><div class="ex-name">Respiração diafragmática <span class="ex-expand-hint">▼ instruções</span></div><div class="ex-meta">Sistema nervoso · Recuperação · 1–2 min</div></div><div class="ex-badge badge-none">Sem equip.</div></div>
     <div class="ex-instructions" id="instr-c3">
       <div class="instruction-step"><div class="step-num">1</div><div class="step-text">Senta-te ou deita-te. Uma mão no peito, outra no abdómen.</div></div>
-      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Inspira</strong> pelo nariz 4 seg — o abdómen sobe, não o peito.</div></div>
+      <div class="instruction-step"><div class="step-num">2</div><div class="step-text"><strong>Inspira</strong> pelo nariz 4 seg — o abdómen sobe.</div></div>
       <div class="instruction-step"><div class="step-num">3</div><div class="step-text"><strong>Segura</strong> 2 seg. <strong>Expira</strong> pela boca 6 seg. Repete 6–8 vezes.</div></div>
     </div>
   </div>
@@ -444,25 +498,92 @@ canvas{ width:100%!important; display:block; }
   <div id="body-history"></div>
 </div>
 
+<!-- ══ MÉTRICAS ══ -->
+
+<div class="screen" id="screen-metricas">
+  <div class="screen-title">Métricas</div>
+  <div class="screen-sub">Visão geral da tua actividade física</div>
+
+  <!-- STATS GRID -->
+
+  <div class="metrics-grid" id="metrics-grid"></div>
+
+  <!-- STREAK -->
+
+  <div id="streak-card"></div>
+
+  <!-- WEIGHT TREND -->
+
+  <div class="mini-chart" id="weight-trend-wrap" style="display:none">
+    <div class="chart-label">Peso corporal (kg)</div>
+    <canvas id="weight-trend-chart" height="120"></canvas>
+  </div>
+
+  <!-- MONTHLY BAR CHART -->
+
+  <div class="bar-chart-wrap">
+    <div class="bar-chart-label">Treinos de ginásio por mês</div>
+    <canvas id="monthly-chart" height="140"></canvas>
+  </div>
+
+  <!-- ACTIVITY LOG SECTION -->
+
+  <div class="section-div" style="margin-top:1.5rem">Registar actividade em casa</div>
+  <div class="activity-form">
+    <div class="activity-form-title">Nova actividade</div>
+    <div class="activity-type-btns">
+      <button class="activity-type-btn active" onclick="setActivityType('bicicleta',this)">🚲 Bicicleta</button>
+      <button class="activity-type-btn" onclick="setActivityType('treino-casa',this)">🏠 Treino casa</button>
+      <button class="activity-type-btn" onclick="setActivityType('caminhada',this)">🚶 Caminhada</button>
+      <button class="activity-type-btn" onclick="setActivityType('outro',this)">➕ Outro</button>
+    </div>
+    <div class="activity-row">
+      <div>
+        <label class="field-label">Data</label>
+        <input type="date" class="field-input" id="act-data">
+      </div>
+      <div>
+        <label class="field-label">Duração (min)</label>
+        <input type="number" inputmode="numeric" class="field-input" placeholder="20" id="act-duracao">
+      </div>
+    </div>
+    <div style="margin-bottom:.8rem">
+      <label class="field-label">Nota (opcional)</label>
+      <input type="text" class="field-input" placeholder="Ex: 20 min nível 5" id="act-nota">
+    </div>
+    <button class="form-save-btn" onclick="saveActivity()">💾 Guardar actividade</button>
+  </div>
+
+  <!-- RECENT ACTIVITIES -->
+
+  <div class="section-div">Actividades recentes</div>
+  <div id="activities-list"></div>
+</div>
+
 <!-- ══ DICAS ══ -->
 
 <div class="screen" id="screen-dicas">
   <div class="tip-card"><div class="tip-ex-name">Puxada à frente</div><div class="tip-muscle">Grande dorsal · Bíceps · Rombóides</div><div class="tip-text">Coxas fixas. Barra mais larga que os ombros. <strong>Puxa até ao queixo</strong> com o peito aberto. Desce 2 seg. <strong>Evita:</strong> balançar o tronco.</div></div>
-  <div class="tip-card"><div class="tip-ex-name">Remada na máquina</div><div class="tip-muscle">Rombóides · Trapézio médio · Grande dorsal · Bíceps</div><div class="tip-text">Peito apoiado no suporte. <strong>Puxa os punhos em direção ao abdómen.</strong> Sente as omoplatas a juntar-se no fim. Volta devagar. <strong>Essencial</strong> para contrariar a postura sentada.</div></div>
+  <div class="tip-card"><div class="tip-ex-name">Remada na máquina</div><div class="tip-muscle">Rombóides · Trapézio médio · Grande dorsal · Bíceps</div><div class="tip-text">Peito apoiado. <strong>Puxa os punhos em direção ao abdómen.</strong> Sente as omoplatas a juntar-se. Volta devagar. <strong>Essencial</strong> para contrariar a postura sentada.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Press de peito na máquina</div><div class="tip-muscle">Peitoral maior · Tríceps · Deltóide anterior</div><div class="tip-text">Punhos ao nível dos ombros. <strong>Não travas os cotovelos.</strong> Volta devagar.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Curl de bíceps alternado</div><div class="tip-muscle">Bíceps braquial · Braquiorradial</div><div class="tip-text"><strong>Cotovelos colados ao tronco.</strong> Roda o pulso para fora no topo. Sem balanço do corpo.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Extensão de tríceps (Pushdown)</div><div class="tip-muscle">Tríceps braquial — 3 cabeças</div><div class="tip-text"><strong>Cotovelos fixos junto ao tronco.</strong> Empurra até estender. Volta lentamente.</div></div>
   <div class="tip-card"><div class="tip-ex-name">Elevação lateral</div><div class="tip-muscle">Deltóide médio · Trapézio</div><div class="tip-text">Começa com <strong>2–4 kg.</strong> Para na altura dos ombros — <strong>não subas acima dos 90°.</strong></div></div>
-  <div class="tip-card tip-optional"><div class="tip-ex-name" style="color:#FFD166">⭐ Face pull no cabo</div><div class="tip-muscle" style="color:#FFD166">Trapézio médio · Rombóides · Rotadores externos</div><div class="tip-text">Polia ao nível dos olhos. Usa corda. <strong>Puxa em direção à testa</strong>, separando as mãos — cotovelos para os lados e acima dos ombros. O melhor exercício para postura e saúde dos ombros a longo prazo.</div></div>
+  <div class="tip-card tip-optional"><div class="tip-ex-name" style="color:#FFD166">⭐ Face pull no cabo</div><div class="tip-muscle" style="color:#FFD166">Trapézio médio · Rombóides · Rotadores externos</div><div class="tip-text">Polia ao nível dos olhos. Usa corda. <strong>Puxa em direção à testa</strong>, cotovelos para os lados e acima dos ombros.</div></div>
   <div class="tip-card" style="border-left-color:#4CAF7D"><div class="tip-ex-name" style="color:#4CAF7D">🥩 Proteína diária</div><div class="tip-muscle" style="color:#4CAF7D">Meta: 105g/dia</div><div class="tip-text"><strong>Fontes fáceis:</strong> ovo, frango, atum, iogurte grego, queijo cottage.</div></div>
+  <div class="tip-card" style="border-left-color:#5B9BD5"><div class="tip-ex-name" style="color:#5B9BD5">⏱ Descansos</div><div class="tip-muscle" style="color:#5B9BD5">Automáticos na app</div><div class="tip-text"><strong>Entre séries (S1→S2, S2→S3):</strong> 40 segundos.<br><strong>Entre exercícios (após S3):</strong> 3 minutos.<br>O timer arranca automaticamente quando marcas ✓ em cada série.</div></div>
 </div>
 
-</div>
+</div><!-- /app -->
 
 <!-- REST TIMER -->
 
 <div class="rest-timer" id="rest-timer">
-  <div><div class="rest-timer-label">Descanso</div><div class="rest-timer-count" id="rest-count">60</div></div>
+  <div class="rest-timer-info">
+    <div class="rest-timer-label">Descanso</div>
+    <div class="rest-timer-type" id="rest-type">Entre séries</div>
+    <div class="rest-timer-count" id="rest-count">40</div>
+  </div>
   <button class="rest-timer-skip" onclick="stopRestTimer()">Saltar ✕</button>
 </div>
 
@@ -472,10 +593,10 @@ canvas{ width:100%!important; display:block; }
   <div class="ex-modal">
     <button class="modal-close" onclick="closeExModalDirect()">✕</button>
     <div class="modal-handle"></div>
-    <div class="modal-name"   id="modal-name"></div>
+    <div class="modal-name" id="modal-name"></div>
     <div class="modal-muscle" id="modal-muscle"></div>
     <div class="ex-illustration" id="modal-illustration"></div>
-    <div class="modal-tip"    id="modal-tip"></div>
+    <div class="modal-tip" id="modal-tip"></div>
     <a class="yt-btn" id="modal-yt" href="#" target="_blank" rel="noopener">▶ Ver vídeo no YouTube</a>
   </div>
 </div>
@@ -514,270 +635,59 @@ canvas{ width:100%!important; display:block; }
 <script>
 // ══════════════════════════════
 // SVG ILLUSTRATIONS
-// Each SVG is a simple anatomical diagram showing the exercise movement
-// Colors: body=#4A4A5A, highlight=#FF6B4A, machine=#2A3A5A, cable=#FFD166
 // ══════════════════════════════
 const SVG_ILLUSTRATIONS = {
-  b1: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Machine frame -->
-    <rect x="20" y="10" width="260" height="8" rx="4" fill="#2A3A5A"/>
-    <rect x="130" y="18" width="8" height="60" fill="#2A3A5A"/>
-    <!-- Cable -->
-    <line x1="134" y1="18" x2="100" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <line x1="166" y1="18" x2="200" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <!-- Bar -->
-    <rect x="80" y="88" width="140" height="8" rx="4" fill="#888"/>
-    <!-- Seated figure -->
-    <!-- Torso -->
-    <rect x="126" y="105" width="18" height="45" rx="6" fill="#4A4A5A"/>
-    <!-- Head -->
-    <circle cx="135" cy="95" r="12" fill="#4A4A5A"/>
-    <!-- Arms reaching up -->
-    <line x1="126" y1="115" x2="97" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
-    <line x1="144" y1="115" x2="200" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
-    <!-- Seat -->
-    <rect x="105" y="148" width="60" height="10" rx="4" fill="#2A3A5A"/>
-    <!-- Legs -->
-    <rect x="112" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/>
-    <rect x="146" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/>
-    <!-- Thigh pads -->
-    <rect x="95" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/>
-    <rect x="140" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/>
-    <!-- Arrow showing pull direction -->
-    <path d="M135 75 L135 105" stroke="#4CAF7D" stroke-width="2" stroke-dasharray="3,2"/>
-    <polygon points="135,108 130,97 140,97" fill="#4CAF7D"/>
-    <!-- Label -->
-    <text x="150" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa até ao queixo ↓</text>
-  </svg>`,
-
-  b2: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Machine frame -->
-    <rect x="20" y="60" width="12" height="120" rx="4" fill="#2A3A5A"/>
-    <rect x="20" y="100" width="60" height="8" rx="4" fill="#2A3A5A"/>
-    <!-- Handles -->
-    <circle cx="80" cy="104" r="6" fill="#888"/>
-    <!-- Cable -->
-    <line x1="80" y1="104" x2="130" y2="110" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <!-- Figure seated facing machine -->
-    <!-- Torso leaning forward -->
-    <rect x="130" y="95" width="16" height="40" rx="6" fill="#4A4A5A" transform="rotate(-15,138,115)"/>
-    <!-- Head -->
-    <circle cx="125" cy="87" r="12" fill="#4A4A5A"/>
-    <!-- Chest pad -->
-    <rect x="140" y="92" width="14" height="30" rx="4" fill="#1A2A4A"/>
-    <!-- Arms pulling back - highlight -->
-    <line x1="130" y1="108" x2="80" y2="104" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/>
-    <!-- Shoulder blades area highlighted -->
-    <ellipse cx="148" cy="105" rx="14" ry="10" fill="rgba(255,107,74,0.25)" stroke="#FF6B4A" stroke-width="1.5"/>
-    <!-- Seat -->
-    <rect x="130" y="135" width="70" height="10" rx="4" fill="#2A3A5A"/>
-    <!-- Legs -->
-    <rect x="138" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/>
-    <rect x="170" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/>
-    <!-- Arrow showing pull direction -->
-    <path d="M105 104 L125 108" stroke="#4CAF7D" stroke-width="2"/>
-    <polygon points="128,108 118,102 118,114" fill="#4CAF7D"/>
-    <!-- Label -->
-    <text x="155" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Omoplatas juntas →</text>
-  </svg>`,
-
-  b3: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Figure standing -->
-    <!-- Head -->
-    <circle cx="150" cy="35" r="18" fill="#4A4A5A"/>
-    <!-- Torso -->
-    <rect x="130" y="52" width="40" height="70" rx="8" fill="#4A4A5A"/>
-    <!-- Left arm down (normal) -->
-    <line x1="130" y1="65" x2="100" y2="110" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="98" cy="115" r="8" fill="#888"/>
-    <!-- Right arm bent up (curl) - highlighted -->
-    <line x1="170" y1="65" x2="195" y2="90" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
-    <line x1="195" y1="90" x2="175" y2="60" stroke="#FF6B4A" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="172" cy="57" r="9" fill="#FFD166"/>
-    <!-- Elbow stays fixed indicator -->
-    <circle cx="195" cy="90" r="6" fill="none" stroke="#4CAF7D" stroke-width="2"/>
-    <text x="202" y="93" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">fixo</text>
-    <!-- Legs -->
-    <rect x="134" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/>
-    <rect x="154" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/>
-    <!-- Arrow showing curl direction -->
-    <path d="M185 85 Q170 50 165 62" stroke="#4CAF7D" stroke-width="2" fill="none" stroke-dasharray="3,2"/>
-    <polygon points="163,65 158,54 168,56" fill="#4CAF7D"/>
-    <!-- Label -->
-    <text x="35" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelo fixo — roda o pulso no topo</text>
-  </svg>`,
-
-  b4: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Cable machine top -->
-    <rect x="220" y="10" width="60" height="8" rx="4" fill="#2A3A5A"/>
-    <rect x="268" y="18" width="8" height="130" rx="3" fill="#2A3A5A"/>
-    <!-- Cable -->
-    <line x1="272" y1="18" x2="195" y2="80" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <!-- Handle -->
-    <rect x="185" y="75" width="20" height="8" rx="4" fill="#888"/>
-    <!-- Standing figure -->
-    <circle cx="140" cy="45" r="18" fill="#4A4A5A"/>
-    <!-- Torso -->
-    <rect x="122" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
-    <!-- Arms - elbows at sides, hands push down -->
-    <!-- Upper arms (fixed at sides) -->
-    <line x1="122" y1="72" x2="105" y2="95" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
-    <line x1="158" y1="72" x2="175" y2="80" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/>
-    <!-- Forearms pushing down - highlighted -->
-    <line x1="105" y1="95" x2="100" y2="135" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <line x1="175" y1="80" x2="192" y2="118" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <!-- Hands/handle -->
-    <rect x="88" y="132" width="24" height="7" rx="3" fill="#888"/>
-    <line x1="192" y1="118" x2="196" y2="80" stroke="#FFD166" stroke-width="2"/>
-    <!-- Elbow fixed indicators -->
-    <circle cx="105" cy="95" r="5" fill="none" stroke="#4CAF7D" stroke-width="2"/>
-    <!-- Legs -->
-    <rect x="126" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/>
-    <rect x="145" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/>
-    <!-- Arrow -->
-    <path d="M100 110 L100 132" stroke="#4CAF7D" stroke-width="2"/>
-    <polygon points="100,135 95,124 105,124" fill="#4CAF7D"/>
-    <text x="20" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelos fixos — empurra até estender</text>
-  </svg>`,
-
-  b5: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Standing figure -->
-    <circle cx="150" cy="40" r="18" fill="#4A4A5A"/>
-    <!-- Torso -->
-    <rect x="132" y="57" width="36" height="65" rx="8" fill="#4A4A5A"/>
-    <!-- Left arm raised to shoulder height - highlighted -->
-    <line x1="132" y1="70" x2="72" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <circle cx="68" cy="75" r="9" fill="#FFD166"/>
-    <!-- Right arm raised to shoulder height - highlighted -->
-    <line x1="168" y1="70" x2="228" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <circle cx="232" cy="75" r="9" fill="#FFD166"/>
-    <!-- 90 degree indicator -->
-    <line x1="132" y1="70" x2="132" y2="95" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
-    <text x="55" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text>
-    <text x="218" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text>
-    <!-- Legs -->
-    <rect x="136" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/>
-    <rect x="154" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/>
-    <!-- X mark above 90 to show not going higher -->
-    <line x1="72" y1="45" x2="82" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
-    <line x1="82" y1="45" x2="72" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
-    <line x1="228" y1="45" x2="238" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
-    <line x1="238" y1="45" x2="228" y2="55" stroke="#FF4D4D" stroke-width="2.5"/>
-    <!-- Arrows showing lift -->
-    <path d="M68 60 L68 73" stroke="#4CAF7D" stroke-width="2"/>
-    <polygon points="68,76 63,65 73,65" fill="#4CAF7D"/>
-    <text x="60" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Para na altura dos ombros — não acima</text>
-  </svg>`,
-
-  b6: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Cable machine on left -->
-    <rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
-    <rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
-    <!-- Cable to face level -->
-    <line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <!-- Cable machine on right -->
-    <rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
-    <rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
-    <!-- Cable to face level -->
-    <line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <!-- Standing figure front view -->
-    <circle cx="150" cy="45" r="18" fill="#4A4A5A"/>
-    <!-- Torso -->
-    <rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
-    <!-- Arms pulling toward face, elbows high and wide - highlighted -->
-    <line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <!-- Forearms angled up - elbows above -->
-    <line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <!-- Rope handle at face -->
-    <circle cx="125" cy="51" r="5" fill="#888"/>
-    <circle cx="175" cy="51" r="5" fill="#888"/>
-    <!-- Elbow high indicator -->
-    <text x="75" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">cotovelo↑</text>
-    <text x="190" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">↑cotovelo</text>
-    <!-- Legs -->
-    <rect x="136" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/>
-    <rect x="154" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/>
-    <text x="55" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa à testa — cotovelos acima dos ombros</text>
-  </svg>`,
-
-  b7: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-    <!-- Same as face pull - it IS the face pull -->
-    <!-- Cable machine on left -->
-    <rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
-    <rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
-    <line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/>
-    <rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/>
-    <line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/>
-    <circle cx="150" cy="45" r="18" fill="#4A4A5A"/>
-    <rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/>
-    <line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/>
-    <line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/>
-    <circle cx="125" cy="51" r="5" fill="#FFD166"/>
-    <circle cx="175" cy="51" r="5" fill="#FFD166"/>
-    <!-- Optional badge -->
-    <rect x="110" y="155" width="80" height="22" rx="8" fill="rgba(255,209,102,0.15)" stroke="rgba(255,209,102,0.4)" stroke-width="1"/>
-    <text x="150" y="170" font-family="Inter,sans-serif" font-size="10" fill="#FFD166" text-anchor="middle">⭐ Opcional</text>
-    <rect x="136" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/>
-    <rect x="154" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/>
-    <text x="55" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Face pull — postura e saúde dos ombros</text>
-  </svg>`
+  b1:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect x="20" y="10" width="260" height="8" rx="4" fill="#2A3A5A"/><rect x="130" y="18" width="8" height="60" fill="#2A3A5A"/><line x1="134" y1="18" x2="100" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><line x1="166" y1="18" x2="200" y2="90" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><rect x="80" y="88" width="140" height="8" rx="4" fill="#888"/><rect x="126" y="105" width="18" height="45" rx="6" fill="#4A4A5A"/><circle cx="135" cy="95" r="12" fill="#4A4A5A"/><line x1="126" y1="115" x2="97" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/><line x1="144" y1="115" x2="200" y2="90" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/><rect x="105" y="148" width="60" height="10" rx="4" fill="#2A3A5A"/><rect x="112" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/><rect x="146" y="158" width="12" height="30" rx="5" fill="#4A4A5A"/><rect x="95" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/><rect x="140" y="145" width="35" height="8" rx="3" fill="#1A2A4A"/><path d="M135 75 L135 105" stroke="#4CAF7D" stroke-width="2" stroke-dasharray="3,2"/><polygon points="135,108 130,97 140,97" fill="#4CAF7D"/><text x="150" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa até ao queixo ↓</text></svg>`,
+  b2:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect x="20" y="60" width="12" height="120" rx="4" fill="#2A3A5A"/><rect x="20" y="100" width="60" height="8" rx="4" fill="#2A3A5A"/><circle cx="80" cy="104" r="6" fill="#888"/><line x1="80" y1="104" x2="130" y2="110" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><rect x="130" y="95" width="16" height="40" rx="6" fill="#4A4A5A" transform="rotate(-15,138,115)"/><circle cx="125" cy="87" r="12" fill="#4A4A5A"/><rect x="140" y="92" width="14" height="30" rx="4" fill="#1A2A4A"/><line x1="130" y1="108" x2="80" y2="104" stroke="#FF6B4A" stroke-width="7" stroke-linecap="round"/><ellipse cx="148" cy="105" rx="14" ry="10" fill="rgba(255,107,74,0.25)" stroke="#FF6B4A" stroke-width="1.5"/><rect x="130" y="135" width="70" height="10" rx="4" fill="#2A3A5A"/><rect x="138" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/><rect x="170" y="145" width="12" height="35" rx="5" fill="#4A4A5A"/><path d="M105 104 L125 108" stroke="#4CAF7D" stroke-width="2"/><polygon points="128,108 118,102 118,114" fill="#4CAF7D"/><text x="140" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Omoplatas juntas →</text></svg>`,
+  b3:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><circle cx="150" cy="35" r="18" fill="#4A4A5A"/><rect x="130" y="52" width="40" height="70" rx="8" fill="#4A4A5A"/><line x1="130" y1="65" x2="100" y2="110" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/><circle cx="98" cy="115" r="8" fill="#888"/><line x1="170" y1="65" x2="195" y2="90" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/><line x1="195" y1="90" x2="175" y2="60" stroke="#FF6B4A" stroke-width="10" stroke-linecap="round"/><circle cx="172" cy="57" r="9" fill="#FFD166"/><circle cx="195" cy="90" r="6" fill="none" stroke="#4CAF7D" stroke-width="2"/><text x="202" y="93" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">fixo</text><rect x="134" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/><rect x="154" y="120" width="16" height="55" rx="6" fill="#4A4A5A"/><text x="30" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelo fixo — roda o pulso no topo</text></svg>`,
+  b4:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect x="220" y="10" width="60" height="8" rx="4" fill="#2A3A5A"/><rect x="268" y="18" width="8" height="130" rx="3" fill="#2A3A5A"/><line x1="272" y1="18" x2="195" y2="80" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><rect x="185" y="75" width="20" height="8" rx="4" fill="#888"/><circle cx="140" cy="45" r="18" fill="#4A4A5A"/><rect x="122" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/><line x1="122" y1="72" x2="105" y2="95" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/><line x1="158" y1="72" x2="175" y2="80" stroke="#4A4A5A" stroke-width="10" stroke-linecap="round"/><line x1="105" y1="95" x2="100" y2="135" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><line x1="175" y1="80" x2="192" y2="118" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><rect x="88" y="132" width="24" height="7" rx="3" fill="#888"/><circle cx="105" cy="95" r="5" fill="none" stroke="#4CAF7D" stroke-width="2"/><rect x="126" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/><rect x="145" y="126" width="15" height="55" rx="6" fill="#4A4A5A"/><path d="M100 110 L100 132" stroke="#4CAF7D" stroke-width="2"/><polygon points="100,135 95,124 105,124" fill="#4CAF7D"/><text x="20" y="190" font-family="Inter,sans-serif" font-size="11" fill="#888">Cotovelos fixos — empurra até estender</text></svg>`,
+  b5:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><circle cx="150" cy="40" r="18" fill="#4A4A5A"/><rect x="132" y="57" width="36" height="65" rx="8" fill="#4A4A5A"/><line x1="132" y1="70" x2="72" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><circle cx="68" cy="75" r="9" fill="#FFD166"/><line x1="168" y1="70" x2="228" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><circle cx="232" cy="75" r="9" fill="#FFD166"/><line x1="132" y1="70" x2="132" y2="95" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/><text x="45" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text><text x="218" y="100" font-family="Inter,sans-serif" font-size="10" fill="#4CAF7D">90°</text><rect x="136" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/><rect x="154" y="121" width="14" height="60" rx="6" fill="#4A4A5A"/><line x1="72" y1="45" x2="82" y2="55" stroke="#FF4D4D" stroke-width="2.5"/><line x1="82" y1="45" x2="72" y2="55" stroke="#FF4D4D" stroke-width="2.5"/><line x1="228" y1="45" x2="238" y2="55" stroke="#FF4D4D" stroke-width="2.5"/><line x1="238" y1="45" x2="228" y2="55" stroke="#FF4D4D" stroke-width="2.5"/><text x="55" y="185" font-family="Inter,sans-serif" font-size="11" fill="#888">Para na altura dos ombros — não acima</text></svg>`,
+  b6:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/><rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/><line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/><rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/><line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><circle cx="150" cy="45" r="18" fill="#4A4A5A"/><rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/><line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><circle cx="125" cy="51" r="5" fill="#888"/><circle cx="175" cy="51" r="5" fill="#888"/><text x="68" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">cotovelo↑</text><text x="183" y="55" font-family="Inter,sans-serif" font-size="9" fill="#4CAF7D">↑cotovelo</text><rect x="136" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/><rect x="154" y="126" width="14" height="58" rx="6" fill="#4A4A5A"/><text x="45" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Puxa à testa — cotovelos acima dos ombros</text></svg>`,
+  b7:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect x="10" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/><rect x="10" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/><line x1="18" y1="40" x2="105" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><rect x="282" y="10" width="8" height="175" rx="3" fill="#2A3A5A"/><rect x="250" y="10" width="40" height="8" rx="3" fill="#2A3A5A"/><line x1="282" y1="40" x2="195" y2="75" stroke="#FFD166" stroke-width="2" stroke-dasharray="4,3"/><circle cx="150" cy="45" r="18" fill="#4A4A5A"/><rect x="132" y="62" width="36" height="65" rx="8" fill="#4A4A5A"/><line x1="132" y1="72" x2="105" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><line x1="168" y1="72" x2="195" y2="75" stroke="#FF6B4A" stroke-width="9" stroke-linecap="round"/><line x1="105" y1="75" x2="125" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><line x1="195" y1="75" x2="175" y2="52" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><circle cx="125" cy="51" r="5" fill="#FFD166"/><circle cx="175" cy="51" r="5" fill="#FFD166"/><rect x="110" y="155" width="80" height="22" rx="8" fill="rgba(255,209,102,0.15)" stroke="rgba(255,209,102,0.4)" stroke-width="1"/><text x="150" y="170" font-family="Inter,sans-serif" font-size="10" fill="#FFD166" text-anchor="middle">⭐ Opcional</text><rect x="136" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/><rect x="154" y="126" width="14" height="28" rx="6" fill="#4A4A5A"/><text x="45" y="192" font-family="Inter,sans-serif" font-size="11" fill="#888">Face pull — postura e saúde dos ombros</text></svg>`
 };
 
 // ══════════════════════════════
 // EXERCISE DATA
 // ══════════════════════════════
 const EX_DATA = {
-  b1:{ name:'Puxada à frente', muscle:'Grande dorsal · Bíceps · Rombóides',
-    tip:'<strong>Coxas fixas</strong> sob o apoio. Agarra a barra um pouco mais larga que os ombros. Puxa até ao queixo com o peito aberto — sente as costas a trabalhar. Desce 2 segundos. <strong>Evita:</strong> balançar o tronco.',
-    yt:'https://www.youtube.com/results?search_query=lat+pulldown+como+fazer+tutorial' },
-  b2:{ name:'Remada na máquina', muscle:'Rombóides · Trapézio médio · Grande dorsal · Bíceps',
-    tip:'Peito apoiado no suporte, costas direitas. <strong>Puxa os punhos em direção ao abdómen</strong> — não ao peito. Sente as omoplatas a juntar-se no final. Volta devagar em 2 segundos. <strong>Essencial</strong> para quem trabalha sentada.',
-    yt:'https://www.youtube.com/results?search_query=remada+maquina+como+fazer+tutorial' },
-  b3:{ name:'Press de peito na máquina', muscle:'Peitoral maior · Tríceps · Deltóide anterior',
-    tip:'Ajusta o banco para os <strong>punhos ficarem ao nível dos ombros.</strong> Empurra à frente de forma controlada. Não travas os cotovelos no final. Volta devagar.',
-    yt:'https://www.youtube.com/results?search_query=chest+press+maquina+como+fazer' },
-  b4:{ name:'Curl de bíceps alternado', muscle:'Bíceps braquial · Braquiorradial',
-    tip:'<strong>Cotovelos colados ao tronco</strong> — não se movem. Eleva um haltere de cada vez, rodando o pulso para fora no topo. <strong>Evita:</strong> usar o balanço do corpo.',
-    yt:'https://www.youtube.com/results?search_query=curl+biceps+alternado+haltere+como+fazer' },
-  b5:{ name:'Extensão de tríceps (Pushdown)', muscle:'Tríceps braquial — 3 cabeças',
-    tip:'De frente para a polia alta. <strong>Cotovelos fixos junto ao tronco.</strong> Empurra o cabo para baixo até os braços ficarem estendidos. Volta lentamente. Barra reta ou corda.',
-    yt:'https://www.youtube.com/results?search_query=triceps+pushdown+cabo+como+fazer' },
-  b6:{ name:'Elevação lateral', muscle:'Deltóide médio · Trapézio superior',
-    tip:'Começa com <strong>halteres muito leves (2–4 kg).</strong> Cotovelo ligeiramente dobrado. Eleva lateralmente até à altura dos ombros. <strong>Não subas acima dos 90°.</strong>',
-    yt:'https://www.youtube.com/results?search_query=elevacao+lateral+ombros+como+fazer' },
-  b7:{ name:'Face pull no cabo', muscle:'Trapézio médio · Rombóides · Rotadores externos do ombro',
-    tip:'Polia ao nível dos olhos ou acima. Usa a corda. <strong>Puxa em direção à testa</strong>, separando as mãos no final — cotovelos para os lados e acima dos ombros. Mantém o tronco estável.',
-    yt:'https://www.youtube.com/results?search_query=face+pull+cabo+como+fazer+tutorial' }
+  b1:{ name:'Puxada à frente', muscle:'Grande dorsal · Bíceps · Rombóides', tip:'<strong>Coxas fixas</strong> sob o apoio. Agarra a barra um pouco mais larga que os ombros. Puxa até ao queixo com o peito aberto. Desce 2 segundos. <strong>Evita:</strong> balançar o tronco.', yt:'https://www.youtube.com/results?search_query=lat+pulldown+como+fazer+tutorial' },
+  b2:{ name:'Remada na máquina', muscle:'Rombóides · Trapézio médio · Grande dorsal · Bíceps', tip:'Peito apoiado no suporte. <strong>Puxa os punhos em direção ao abdómen.</strong> Sente as omoplatas a juntar-se no final. Volta devagar. <strong>Essencial</strong> para quem trabalha sentada.', yt:'https://www.youtube.com/results?search_query=remada+maquina+como+fazer+tutorial' },
+  b3:{ name:'Press de peito na máquina', muscle:'Peitoral maior · Tríceps · Deltóide anterior', tip:'Ajusta o banco para os <strong>punhos ficarem ao nível dos ombros.</strong> Empurra à frente. Não travas os cotovelos. Volta devagar.', yt:'https://www.youtube.com/results?search_query=chest+press+maquina+como+fazer' },
+  b4:{ name:'Curl de bíceps alternado', muscle:'Bíceps braquial · Braquiorradial', tip:'<strong>Cotovelos colados ao tronco</strong> — não se movem. Eleva um haltere de cada vez, rodando o pulso para fora no topo. <strong>Evita:</strong> usar o balanço do corpo.', yt:'https://www.youtube.com/results?search_query=curl+biceps+alternado+haltere+como+fazer' },
+  b5:{ name:'Extensão de tríceps (Pushdown)', muscle:'Tríceps braquial — 3 cabeças', tip:'De frente para a polia alta. <strong>Cotovelos fixos junto ao tronco.</strong> Empurra o cabo para baixo até os braços ficarem estendidos. Volta lentamente.', yt:'https://www.youtube.com/results?search_query=triceps+pushdown+cabo+como+fazer' },
+  b6:{ name:'Elevação lateral', muscle:'Deltóide médio · Trapézio superior', tip:'Começa com <strong>halteres muito leves (2–4 kg).</strong> Cotovelo ligeiramente dobrado. Eleva lateralmente até à altura dos ombros. <strong>Não subas acima dos 90°.</strong>', yt:'https://www.youtube.com/results?search_query=elevacao+lateral+ombros+como+fazer' },
+  b7:{ name:'Face pull no cabo', muscle:'Trapézio médio · Rombóides · Rotadores externos do ombro', tip:'Polia ao nível dos olhos. Usa a corda. <strong>Puxa em direção à testa</strong>, separando as mãos — cotovelos para os lados e acima dos ombros.', yt:'https://www.youtube.com/results?search_query=face+pull+cabo+como+fazer+tutorial' }
 };
 
 const EX_IDS   = ['b1','b2','b3','b4','b5','b6','b7'];
 const EX_NAMES = {b1:'Puxada à frente',b2:'Remada na máquina',b3:'Press de peito',b4:'Curl de bíceps',b5:'Extensão de tríceps',b6:'Elevação lateral',b7:'Face pull'};
+const EX_TARGET_REPS = {b1:10,b2:10,b3:10,b4:10,b5:10,b6:12,b7:15};
+
 const BODY_FIELDS = ['peso','cintura','abdominal','anca','peito','braco-d','braco-e','coxa-d','coxa-e'];
 const BODY_LABELS = {peso:'kg',cintura:'cin',abdominal:'abd',anca:'anca',peito:'peito','braco-d':'B.dir','braco-e':'B.esq','coxa-d':'C.dir','coxa-e':'C.esq'};
 const BODY_CHART_LABELS = {peso:'peso (kg)',cintura:'cintura (cm)',abdominal:'abdominal (cm)',anca:'anca (cm)',peito:'peito (cm)','braco-d':'braço direito (cm)','braco-e':'braço esquerdo (cm)','coxa-d':'coxa direita (cm)','coxa-e':'coxa esquerda (cm)'};
 
+const ACTIVITY_LABELS = {bicicleta:'🚲 Bicicleta','treino-casa':'🏠 Treino casa',caminhada:'🚶 Caminhada',outro:'➕ Outro'};
+
 // ══════════════════════════════
-// LOCALSTORAGE
+// LOCALSTORAGE — same keys as v7/v8 so no data is lost
 // ══════════════════════════════
-const LS = { sessions:'treino_sessions_v7', body:'treino_body_v7' };
-let db = { sessions:[], body:[] };
+const LS = { sessions:'treino_sessions_v7', body:'treino_body_v7', activities:'treino_activities_v9' };
+let db = { sessions:[], body:[], activities:[] };
 
 function loadDB() {
   try {
-    const s=localStorage.getItem(LS.sessions), b=localStorage.getItem(LS.body);
+    const s=localStorage.getItem(LS.sessions), b=localStorage.getItem(LS.body), a=localStorage.getItem(LS.activities);
     if (s) db.sessions=JSON.parse(s);
     if (b) db.body=JSON.parse(b);
+    if (a) db.activities=JSON.parse(a);
   } catch(e){}
 }
 function saveDB(key) {
   try {
-    if (key==='sessions') localStorage.setItem(LS.sessions,JSON.stringify(db.sessions));
-    if (key==='body')     localStorage.setItem(LS.body,JSON.stringify(db.body));
+    if (key==='sessions')   localStorage.setItem(LS.sessions,   JSON.stringify(db.sessions));
+    if (key==='body')       localStorage.setItem(LS.body,       JSON.stringify(db.body));
+    if (key==='activities') localStorage.setItem(LS.activities, JSON.stringify(db.activities));
   } catch(e){}
 }
 
@@ -785,18 +695,21 @@ function saveDB(key) {
 // STATE
 // ══════════════════════════════
 let currentBodyMetric='peso', restIntervalId=null, sessionIntervalId=null;
-let sessionSecs=0, sessionRunning=false, pendingDeleteDate=null, editingDate=null, restSecs=60;
+let sessionSecs=0, sessionRunning=false, pendingDeleteDate=null, editingDate=null;
+let restSecs=40, currentActivityType='bicicleta';
 
 const todayKey=()=>new Date().toISOString().slice(0,10);
 const todayStr=()=>new Date().toLocaleDateString('pt-PT',{weekday:'long',day:'numeric',month:'long'});
 const fmtDate=iso=>new Date(iso+'T12:00:00').toLocaleDateString('pt-PT',{weekday:'short',day:'numeric',month:'short',year:'2-digit'});
+const fmtMonth=iso=>new Date(iso+'-01').toLocaleDateString('pt-PT',{month:'short',year:'2-digit'});
 const padZ=n=>String(n).padStart(2,'0');
 
 function init() {
   loadDB();
   document.getElementById('today-date').textContent=todayStr();
   document.getElementById('b-data').value=todayKey();
-  EX_IDS.forEach(ex=>buildSets(ex));
+  document.getElementById('act-data').value=todayKey();
+  EX_IDS.forEach(ex=>{ buildSets(ex); checkProgression(ex); });
   updateSessionCount();
   document.getElementById('loading-overlay').style.display='none';
   document.getElementById('app').style.display='block';
@@ -804,6 +717,9 @@ function init() {
 }
 init();
 
+// ══════════════════════════════
+// TABS
+// ══════════════════════════════
 function showTab(name,el) {
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -811,12 +727,16 @@ function showTab(name,el) {
   el.classList.add('active');
   if (name==='progresso') setTimeout(renderProgress,50);
   if (name==='corpo')     setTimeout(()=>{renderBodyHistory();drawBodyChart();},50);
+  if (name==='metricas')  setTimeout(renderMetrics,50);
 }
 function selectWorkout(el) {
   document.querySelectorAll('.workout-pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
 }
 
+// ══════════════════════════════
+// SESSION TIMER
+// ══════════════════════════════
 function startSessionTimer() {
   if (sessionRunning) return;
   sessionRunning=true;
@@ -841,6 +761,9 @@ function resetSessionTimer() {
   document.getElementById('btn-reset').style.display='none';
 }
 
+// ══════════════════════════════
+// INSTRUCTIONS
+// ══════════════════════════════
 function toggleInstr(id) {
   const el=document.getElementById('instr-'+id);
   const hint=el.previousElementSibling?.querySelector('.ex-expand-hint');
@@ -849,12 +772,15 @@ function toggleInstr(id) {
   if (hint) hint.textContent=el.classList.contains('open')?'▲ fechar':'▼ instruções';
 }
 
+// ══════════════════════════════
+// BUILD SETS
+// ══════════════════════════════
 function buildSets(ex) {
   const container=document.getElementById('sets-'+ex);
   if (!container) return;
   const last=[...db.sessions].reverse().find(s=>s.exercises&&s.exercises[ex]);
   const lastSets=last?(last.exercises[ex]||[]):[];
-  const defaultReps=ex==='b6'?12:ex==='b7'?15:10;
+  const defaultReps=EX_TARGET_REPS[ex]||10;
   let html='';
   for (let i=1;i<=3;i++) {
     const ls=lastSets[i-1]||{},preKg=ls.kg||'',preReps=ls.reps||'';
@@ -869,7 +795,7 @@ function buildSets(ex) {
           placeholder="${preReps||defaultReps}" id="${ex}-s${i}-reps" value="${preReps}">
       </div>
       <div class="prog-arrow" id="${ex}-s${i}-arrow"></div>
-      <button class="set-done" onclick="completedSet(this)">✓</button>
+      <button class="set-done" onclick="completedSet(this,'${ex}',${i})">✓</button>
     </div>`;
   }
   container.innerHTML=html;
@@ -890,22 +816,72 @@ function updateArrow(ex,i) {
   else           {arEl.textContent='=';arEl.style.cssText='color:#888;font-size:.9rem';}
 }
 
-function completedSet(btn) {
-  btn.classList.toggle('completed');
-  if (btn.classList.contains('completed')) startRestTimer(60);
+// ══════════════════════════════
+// PROGRESSION SUGGESTION
+// Shows if last 2 sessions both completed all reps at target
+// ══════════════════════════════
+function checkProgression(ex) {
+  const el=document.getElementById('prog-'+ex);
+  if (!el) return;
+  const sessions=[...db.sessions].filter(s=>s.exercises&&s.exercises[ex]&&s.exercises[ex].length>0);
+  if (sessions.length<2){el.style.display='none';return;}
+  const last2=sessions.slice(-2);
+  const target=EX_TARGET_REPS[ex]||10;
+  const bothComplete=last2.every(sess=>{
+    const sets=sess.exercises[ex];
+    return sets.length>=3 && sets.every(set=>set.reps && set.reps>=target && set.done);
+  });
+  if (bothComplete) {
+    const lastKg=Math.max(...last2[last2.length-1].exercises[ex].map(s=>s.kg||0));
+    const suggestedKg=(lastKg+2.5).toFixed(1);
+    el.style.display='block';
+    el.innerHTML=`💪 <strong>Pronta para progredir!</strong> Completaste as reps alvo nas últimas 2 sessões. Experimenta <strong>${suggestedKg} kg</strong> na próxima sessão.`;
+  } else {
+    el.style.display='none';
+  }
 }
-function startRestTimer(secs) {
-  stopRestTimer(); restSecs=secs;
-  document.getElementById('rest-count').textContent=restSecs;
-  document.getElementById('rest-timer').classList.add('visible');
+
+// ══════════════════════════════
+// SMART REST TIMER
+// 40s between sets (S1→S2, S2→S3), 3min after S3
+// ══════════════════════════════
+function completedSet(btn, ex, setIdx) {
+  btn.classList.toggle('completed');
+  if (btn.classList.contains('completed')) {
+    const isLastSet = setIdx === 3;
+    const secs = isLastSet ? 180 : 40;
+    const label = isLastSet ? 'Entre exercícios (3 min)' : 'Entre séries (40 seg)';
+    startRestTimer(secs, label, isLastSet);
+  }
+}
+
+function startRestTimer(secs, label, isLong) {
+  stopRestTimer();
+  restSecs=secs;
+  const timerEl=document.getElementById('rest-timer');
+  const countEl=document.getElementById('rest-count');
+  const typeEl=document.getElementById('rest-type');
+  countEl.textContent=restSecs;
+  typeEl.textContent=label||'Descanso';
+  timerEl.className='rest-timer visible'+(isLong?' long-rest':'');
   restIntervalId=setInterval(()=>{
     restSecs--;
-    document.getElementById('rest-count').textContent=restSecs;
-    if(restSecs<=0){stopRestTimer();if(navigator.vibrate)navigator.vibrate([200,100,200]);showToast('⏱ Descanso terminado!','info');}
+    countEl.textContent=restSecs;
+    if(restSecs<=0){
+      stopRestTimer();
+      if(navigator.vibrate) navigator.vibrate(isLong?[300,100,300,100,300]:[200,100,200]);
+      showToast(isLong?'🔔 Próximo exercício!':'⏱ Próxima série!','info');
+    }
   },1000);
 }
-function stopRestTimer(){clearInterval(restIntervalId);document.getElementById('rest-timer').classList.remove('visible');}
+function stopRestTimer(){
+  clearInterval(restIntervalId);
+  document.getElementById('rest-timer').classList.remove('visible','long-rest');
+}
 
+// ══════════════════════════════
+// SAVE SESSION
+// ══════════════════════════════
 function saveSession() {
   const date=todayKey();
   const session={date,exercises:{},notes:document.getElementById('session-notes').value.trim(),duration:sessionSecs};
@@ -929,13 +905,17 @@ function saveSession() {
   db.sessions=db.sessions.filter(s=>s.date!==date);
   db.sessions.push(session);
   db.sessions.sort((a,b)=>a.date.localeCompare(b.date));
-  saveDB('sessions'); updateSessionCount();
+  saveDB('sessions');
+  updateSessionCount();
+  // Refresh progression hints
+  EX_IDS.forEach(ex=>checkProgression(ex));
   const pct=Math.round((done/total)*100);
   const el=document.getElementById('session-summary');
   el.style.display='block';
   const dur=sessionSecs>0?` · ${padZ(Math.floor(sessionSecs/60))}:${padZ(sessionSecs%60)}`:'';
   el.innerHTML=`<strong>${done} de ${total} séries</strong> concluídas (${pct}%)${dur}. ${pct===100?'🏆 Treino completo!':pct>=66?'💪 Bom trabalho!':'👍 Continua assim!'}`;
-  showToast('✓ Sessão guardada!','success'); stopRestTimer();
+  showToast('✓ Sessão guardada!','success');
+  stopRestTimer();
 }
 
 function updateSessionCount() {
@@ -944,6 +924,9 @@ function updateSessionCount() {
   document.getElementById('session-badge').textContent=`${n} sessão${n!==1?'ões':''}`;
 }
 
+// ══════════════════════════════
+// EX MODAL
+// ══════════════════════════════
 function openExModal(ex) {
   const d=EX_DATA[ex];
   document.getElementById('modal-name').textContent=d.name;
@@ -959,33 +942,25 @@ function closeExModalDirect(){
   document.body.style.overflow='';
 }
 
+// ══════════════════════════════
+// PROGRESS
+// ══════════════════════════════
 function renderProgress() {
   const ex=document.getElementById('prog-select').value;
   const sessions=db.sessions.filter(s=>s.exercises&&s.exercises[ex]?.length>0);
   const histEl=document.getElementById('prog-history');
-  if(!sessions.length){
-    histEl.innerHTML=`<div class="no-history">Sem sessões registadas para este exercício.<br><br>Completa o teu primeiro treino! 💪</div>`;
-    drawLineChart('prog-chart',[],[]);return;
-  }
-  drawLineChart('prog-chart',sessions.map(s=>s.date.slice(5)),
-    sessions.map(s=>{const kgs=s.exercises[ex].map(st=>st.kg||0).filter(k=>k>0);return kgs.length?Math.max(...kgs):0;}));
+  if(!sessions.length){histEl.innerHTML=`<div class="no-history">Sem sessões registadas para este exercício.<br><br>Completa o teu primeiro treino! 💪</div>`;drawLineChart('prog-chart',[],[]);return;}
+  drawLineChart('prog-chart',sessions.map(s=>s.date.slice(5)),sessions.map(s=>{const kgs=s.exercises[ex].map(st=>st.kg||0).filter(k=>k>0);return kgs.length?Math.max(...kgs):0;}));
   histEl.innerHTML=[...sessions].reverse().map(s=>{
     const sH=s.exercises[ex].map((st,i)=>`<div class="history-set">S${i+1} <span class="kg">${st.kg??'—'} kg</span> <span class="reps">×${st.reps??'—'}</span></div>`).join('');
     const dur=s.duration>0?` · ${padZ(Math.floor(s.duration/60))}:${padZ(s.duration%60)}`:'';
-    return `<div class="history-entry">
-      <div class="history-entry-header">
-        <div class="history-date">${fmtDate(s.date)}${dur}</div>
-        <div class="entry-actions">
-          <button class="entry-btn btn-edit" onclick="openEditModal('${s.date}')">✏️</button>
-          <button class="entry-btn btn-del" onclick="askDelete('${s.date}')">🗑</button>
-        </div>
-      </div>
-      <div class="history-sets">${sH}</div>
-      ${s.notes?`<div class="history-note">📝 ${s.notes}</div>`:''}
-    </div>`;
+    return `<div class="history-entry"><div class="history-entry-header"><div class="history-date">${fmtDate(s.date)}${dur}</div><div class="entry-actions"><button class="entry-btn btn-edit" onclick="openEditModal('${s.date}')">✏️</button><button class="entry-btn btn-del" onclick="askDelete('${s.date}')">🗑</button></div></div><div class="history-sets">${sH}</div>${s.notes?`<div class="history-note">📝 ${s.notes}</div>`:''}</div>`;
   }).join('');
 }
 
+// ══════════════════════════════
+// EDIT
+// ══════════════════════════════
 function openEditModal(date) {
   editingDate=date;
   const session=db.sessions.find(s=>s.date===date);
@@ -999,11 +974,7 @@ function openEditModal(date) {
     html+=`<div class="edit-ex-title">${EX_NAMES[ex]}</div>`;
     for(let i=0;i<3;i++){
       const set=sets[i]||{};
-      html+=`<div class="edit-set-row">
-        <div class="edit-set-num">S${i+1}</div>
-        <div class="input-col"><div class="edit-input-label">kg</div><input class="edit-input" type="number" inputmode="decimal" step="0.5" value="${set.kg||''}" placeholder="—" id="edit-${ex}-s${i+1}-kg"></div>
-        <div class="input-col"><div class="edit-input-label">reps</div><input class="edit-input" type="number" inputmode="numeric" value="${set.reps||''}" placeholder="—" id="edit-${ex}-s${i+1}-reps"></div>
-      </div>`;
+      html+=`<div class="edit-set-row"><div class="edit-set-num">S${i+1}</div><div class="input-col"><div class="edit-input-label">kg</div><input class="edit-input" type="number" inputmode="decimal" step="0.5" value="${set.kg||''}" placeholder="—" id="edit-${ex}-s${i+1}-kg"></div><div class="input-col"><div class="edit-input-label">reps</div><input class="edit-input" type="number" inputmode="numeric" value="${set.reps||''}" placeholder="—" id="edit-${ex}-s${i+1}-reps"></div></div>`;
     }
   });
   document.getElementById('edit-sets-container').innerHTML=html;
@@ -1021,31 +992,35 @@ function saveEdit() {
     for(let i=0;i<3;i++){
       const kgEl=document.getElementById(`edit-${ex}-s${i+1}-kg`);
       const rpEl=document.getElementById(`edit-${ex}-s${i+1}-reps`);
-      if(kgEl&&rpEl&&session.exercises[ex][i]){
-        session.exercises[ex][i].kg=parseFloat(kgEl.value)||null;
-        session.exercises[ex][i].reps=parseInt(rpEl.value)||null;
-      }
+      if(kgEl&&rpEl&&session.exercises[ex][i]){session.exercises[ex][i].kg=parseFloat(kgEl.value)||null;session.exercises[ex][i].reps=parseInt(rpEl.value)||null;}
     }
   });
   db.sessions.sort((a,b)=>a.date.localeCompare(b.date));
   saveDB('sessions');
   document.getElementById('edit-overlay').classList.remove('open');
   document.body.style.overflow='';
-  EX_IDS.forEach(ex=>buildSets(ex));
+  EX_IDS.forEach(ex=>{buildSets(ex);checkProgression(ex);});
   renderProgress();
   showToast('✓ Atualizado!','success');
 }
 
+// ══════════════════════════════
+// DELETE
+// ══════════════════════════════
 function askDelete(date){pendingDeleteDate=date;document.getElementById('confirm-overlay').classList.add('open');}
 function closeConfirm(){document.getElementById('confirm-overlay').classList.remove('open');pendingDeleteDate=null;}
 function confirmDelete(){
   if(!pendingDeleteDate)return;
   db.sessions=db.sessions.filter(s=>s.date!==pendingDeleteDate);
   saveDB('sessions');closeConfirm();updateSessionCount();
-  EX_IDS.forEach(ex=>buildSets(ex));renderProgress();
+  EX_IDS.forEach(ex=>{buildSets(ex);checkProgression(ex);});
+  renderProgress();
   showToast('🗑 Sessão apagada','warn');
 }
 
+// ══════════════════════════════
+// BODY TRACKING
+// ══════════════════════════════
 function saveBodyEntry() {
   const dateVal=document.getElementById('b-data').value||todayKey();
   const entry={date:dateVal};let hasData=false;
@@ -1080,10 +1055,205 @@ function renderBodyHistory(){
 }
 function deleteBodyEntry(date){db.body=db.body.filter(e=>e.date!==date);saveDB('body');renderBodyHistory();drawBodyChart();showToast('🗑 Medição apagada','warn');}
 
+// ══════════════════════════════
+// METRICS
+// ══════════════════════════════
+function renderMetrics() {
+  const now = new Date();
+  const thisMonth = now.toISOString().slice(0,7); // YYYY-MM
+  const thisYear  = now.getFullYear().toString();
+
+  const gymSessions = db.sessions;
+  const activities  = db.activities;
+
+  const sessionsThisMonth = gymSessions.filter(s=>s.date.startsWith(thisMonth)).length;
+  const sessionsThisYear  = gymSessions.filter(s=>s.date.startsWith(thisYear)).length;
+  const totalSessions     = gymSessions.length;
+
+  // Total activity minutes this month (gym + home)
+  const gymMinsMonth = gymSessions.filter(s=>s.date.startsWith(thisMonth)).reduce((acc,s)=>acc+(s.duration||0),0);
+  const actMinsMonth = activities.filter(a=>a.date.startsWith(thisMonth)).reduce((acc,a)=>acc+(a.duration||0),0);
+  const totalMinsMonth = Math.round((gymMinsMonth/60)+actMinsMonth);
+
+  // Weight change
+  const weights = db.body.filter(e=>e.peso!=null).sort((a,b)=>a.date.localeCompare(b.date));
+  const latestWeight = weights.length ? weights[weights.length-1].peso : null;
+  const firstWeight  = weights.length ? weights[0].peso : null;
+  const weightChange = (latestWeight&&firstWeight) ? (latestWeight-firstWeight).toFixed(1) : null;
+
+  // Streak (consecutive weeks with at least 1 session)
+  const streak = calcStreak(gymSessions);
+
+  // Render metric cards
+  document.getElementById('metrics-grid').innerHTML=`
+    <div class="metric-card">
+      <div class="metric-val">${sessionsThisMonth}</div>
+      <div class="metric-label">Treinos este mês</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-val">${sessionsThisYear}</div>
+      <div class="metric-label">Treinos este ano</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-val">${totalSessions}</div>
+      <div class="metric-label">Total de treinos</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-val" style="font-size:1.3rem">${latestWeight ? latestWeight+'kg' : '—'}</div>
+      <div class="metric-label">Peso atual</div>
+      <div class="metric-sub">${weightChange ? (weightChange>0?'+':'')+weightChange+' kg desde o início' : ''}</div>
+    </div>`;
+
+  // Streak card
+  document.getElementById('streak-card').innerHTML=`
+    <div class="streak-card">
+      <div class="streak-icon">🔥</div>
+      <div>
+        <div class="streak-val">${streak} semana${streak!==1?'s':''}</div>
+        <div class="streak-label">consecutivas com pelo menos 1 treino</div>
+      </div>
+    </div>`;
+
+  // Weight trend chart
+  const wtWrap = document.getElementById('weight-trend-wrap');
+  if (weights.length >= 2) {
+    wtWrap.style.display='block';
+    drawLineChart('weight-trend-chart', weights.map(e=>e.date.slice(5)), weights.map(e=>e.peso), '#FF9A3C','#FFD166');
+  } else {
+    wtWrap.style.display='none';
+  }
+
+  // Monthly bar chart (last 6 months)
+  drawMonthlyChart(gymSessions);
+
+  // Activities list
+  renderActivitiesList();
+}
+
+function calcStreak(sessions) {
+  if (!sessions.length) return 0;
+  const weeks = new Set(sessions.map(s=>{
+    const d=new Date(s.date+'T12:00:00');
+    const jan1=new Date(d.getFullYear(),0,1);
+    return d.getFullYear()+'-W'+Math.ceil(((d-jan1)/(86400000)+jan1.getDay()+1)/7);
+  }));
+  const sorted=[...weeks].sort().reverse();
+  const now=new Date();
+  const jan1=new Date(now.getFullYear(),0,1);
+  const currentWeek=now.getFullYear()+'-W'+Math.ceil(((now-jan1)/(86400000)+jan1.getDay()+1)/7);
+  let streak=0, w=currentWeek;
+  for (let i=0;i<sorted.length;i++) {
+    if (sorted[i]===w||sorted[i]===getPrevWeek(w)) { streak++; w=getPrevWeek(w); }
+    else break;
+  }
+  return streak;
+}
+function getPrevWeek(wk) {
+  const [y,wn]=wk.split('-W').map(Number);
+  if (wn===1) return (y-1)+'-W52';
+  return y+'-W'+(wn-1);
+}
+
+function drawMonthlyChart(sessions) {
+  const canvas=document.getElementById('monthly-chart');
+  if (!canvas) return;
+  const months=[];
+  const now=new Date();
+  for (let i=5;i>=0;i--) {
+    const d=new Date(now.getFullYear(),now.getMonth()-i,1);
+    months.push(d.toISOString().slice(0,7));
+  }
+  const counts=months.map(m=>sessions.filter(s=>s.date.startsWith(m)).length);
+  const labels=months.map(m=>fmtMonth(m));
+  drawBarChart(canvas,labels,counts);
+}
+
+function drawBarChart(canvas,labels,values) {
+  const dpr=window.devicePixelRatio||1;
+  const rect=canvas.getBoundingClientRect();
+  const W=(rect.width||300)*dpr, H=140*dpr;
+  canvas.width=W; canvas.height=H;
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const w=W/dpr, h=H/dpr;
+  ctx.clearRect(0,0,w,h);
+  const pad={top:10,right:10,bottom:30,left:30};
+  const cw=w-pad.left-pad.right, ch=h-pad.top-pad.bottom;
+  const maxV=Math.max(...values,1);
+  const barW=cw/values.length*0.6;
+  const gap=cw/values.length;
+  // Gridlines
+  ctx.strokeStyle='rgba(255,255,255,.07)'; ctx.lineWidth=1;
+  for (let i=0;i<=4;i++){
+    const y=pad.top+(i/4)*ch;
+    ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();
+    ctx.fillStyle='#777';ctx.font='10px Inter';ctx.textAlign='right';
+    ctx.fillText(Math.round((1-i/4)*maxV),pad.left-4,y+4);
+  }
+  // Bars
+  values.forEach((v,i)=>{
+    const x=pad.left+i*gap+(gap-barW)/2;
+    const barH=(v/maxV)*ch;
+    const y=pad.top+ch-barH;
+    const grad=ctx.createLinearGradient(0,y,0,pad.top+ch);
+    grad.addColorStop(0,'#FF6B4A');grad.addColorStop(1,'rgba(255,107,74,.3)');
+    ctx.fillStyle=grad;
+    ctx.beginPath();ctx.roundRect(x,y,barW,barH,3);ctx.fill();
+    // Value label
+    if (v>0){ctx.fillStyle='#F2F2F2';ctx.font='bold 11px Syne';ctx.textAlign='center';ctx.fillText(v,x+barW/2,y-4);}
+    // X label
+    ctx.fillStyle='#888';ctx.font='10px Inter';ctx.textAlign='center';ctx.fillText(labels[i],x+barW/2,h-6);
+  });
+}
+
+// ══════════════════════════════
+// ACTIVITIES
+// ══════════════════════════════
+function setActivityType(type, el) {
+  currentActivityType=type;
+  document.querySelectorAll('.activity-type-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+function saveActivity() {
+  const date=document.getElementById('act-data').value||todayKey();
+  const durStr=document.getElementById('act-duracao').value;
+  const nota=document.getElementById('act-nota').value.trim();
+  const duration=parseInt(durStr)||0;
+  if (!duration){showToast('Indica a duração em minutos','warn');return;}
+  const entry={id:Date.now(),date,type:currentActivityType,duration,nota};
+  db.activities.push(entry);
+  db.activities.sort((a,b)=>a.date.localeCompare(b.date));
+  saveDB('activities');
+  document.getElementById('act-duracao').value='';
+  document.getElementById('act-nota').value='';
+  renderActivitiesList();
+  showToast('✓ Actividade guardada!','success');
+}
+function renderActivitiesList() {
+  const el=document.getElementById('activities-list');
+  if (!db.activities.length){el.innerHTML=`<div class="no-history">Ainda sem actividades registadas.</div>`;return;}
+  el.innerHTML=[...db.activities].reverse().slice(0,20).map(a=>`
+    <div class="activity-entry">
+      <div class="activity-entry-left">
+        <div class="activity-type-tag">${ACTIVITY_LABELS[a.type]||a.type}</div>
+        <div class="activity-date">${fmtDate(a.date)}${a.nota?' · '+a.nota:''}</div>
+      </div>
+      <div class="activity-entry-right">
+        <div class="activity-duration">${a.duration}</div>
+        <div class="activity-duration-label">min</div>
+      </div>
+    </div>`).join('');
+}
+function deleteActivity(id){db.activities=db.activities.filter(a=>a.id!==id);saveDB('activities');renderActivitiesList();showToast('🗑 Apagado','warn');}
+
+// ══════════════════════════════
+// CHARTS
+// ══════════════════════════════
 function drawLineChart(canvasId,labels,values,color1='#FF6B4A',color2='#FFD166'){
   const canvas=document.getElementById(canvasId);if(!canvas)return;
   const dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect();
-  const W=(rect.width||300)*dpr,H=150*dpr;canvas.width=W;canvas.height=H;
+  const W=(rect.width||300)*dpr,H=(canvas.getAttribute('height')||150)*dpr;
+  canvas.width=W;canvas.height=H;
   const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);const w=W/dpr,h=H/dpr;ctx.clearRect(0,0,w,h);
   if(!values.length){ctx.fillStyle='#666';ctx.font='13px Inter';ctx.textAlign='center';ctx.fillText('Sem dados ainda',w/2,h/2);return;}
   const pad={top:16,right:16,bottom:28,left:42};const cw=w-pad.left-pad.right,ch=h-pad.top-pad.bottom;
@@ -1099,6 +1269,9 @@ function drawLineChart(canvasId,labels,values,color1='#FF6B4A',color2='#FFD166')
   values.forEach((v,i)=>{ctx.beginPath();ctx.arc(toX(i),toY(v),4,0,Math.PI*2);ctx.fillStyle=color1;ctx.fill();ctx.fillStyle='#777';ctx.font='9px Inter';ctx.textAlign='center';ctx.fillText(labels[i],toX(i),h-6);});
 }
 
+// ══════════════════════════════
+// TOAST
+// ══════════════════════════════
 let toastTimer;
 function showToast(msg,type='success'){
   const t=document.getElementById('toast');t.textContent=msg;t.className=`toast ${type} show`;
